@@ -38,9 +38,9 @@ namespace AISShopComputerParts
             this.viewProducts = new System.Windows.Forms.Button();
             this.viewSales = new System.Windows.Forms.Button();
             this.createSale = new System.Windows.Forms.Button();
-            this.picture = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.picture = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +92,7 @@ namespace AISShopComputerParts
             this.viewProducts.TabIndex = 13;
             this.viewProducts.Text = "Просмотр комплектующих";
             this.viewProducts.UseVisualStyleBackColor = true;
+            this.viewProducts.Click += new System.EventHandler(this.viewProducts_Click);
             // 
             // viewSales
             // 
@@ -110,18 +111,6 @@ namespace AISShopComputerParts
             this.createSale.TabIndex = 16;
             this.createSale.Text = "Оформить продажу";
             this.createSale.UseVisualStyleBackColor = true;
-            // 
-            // picture
-            // 
-            this.picture.Image = global::AISShopComputerParts.Properties.Resources.logo;
-            this.picture.ImageLocation = "";
-            this.picture.Location = new System.Drawing.Point(431, 50);
-            this.picture.Margin = new System.Windows.Forms.Padding(5);
-            this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(509, 406);
-            this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picture.TabIndex = 7;
-            this.picture.TabStop = false;
             // 
             // label1
             // 
@@ -142,6 +131,18 @@ namespace AISShopComputerParts
             this.button1.TabIndex = 15;
             this.button1.Text = "Оформить приход комплектующих";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // picture
+            // 
+            this.picture.Image = global::AISShopComputerParts.Properties.Resources.logo;
+            this.picture.ImageLocation = "";
+            this.picture.Location = new System.Drawing.Point(431, 50);
+            this.picture.Margin = new System.Windows.Forms.Padding(5);
+            this.picture.Name = "picture";
+            this.picture.Size = new System.Drawing.Size(509, 406);
+            this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picture.TabIndex = 7;
+            this.picture.TabStop = false;
             // 
             // ManagerPanel
             // 
