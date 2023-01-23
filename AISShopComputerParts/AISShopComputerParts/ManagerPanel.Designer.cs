@@ -97,9 +97,9 @@ namespace AISShopComputerParts
             // 
             // exit
             // 
-            this.exit.Location = new System.Drawing.Point(20, 464);
+            this.exit.Location = new System.Drawing.Point(14, 464);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(919, 34);
+            this.exit.Size = new System.Drawing.Size(925, 34);
             this.exit.TabIndex = 12;
             this.exit.Text = "Выйти из учетной записи\r\n";
             this.exit.UseVisualStyleBackColor = true;

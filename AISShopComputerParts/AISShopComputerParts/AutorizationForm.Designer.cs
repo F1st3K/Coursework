@@ -45,7 +45,7 @@ namespace AISShopComputerParts
             // 
             // login
             // 
-            this.login.Location = new System.Drawing.Point(54, 71);
+            this.login.Location = new System.Drawing.Point(54, 69);
             this.login.Margin = new System.Windows.Forms.Padding(5);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(226, 36);
@@ -53,7 +53,7 @@ namespace AISShopComputerParts
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(54, 135);
+            this.password.Location = new System.Drawing.Point(54, 130);
             this.password.Margin = new System.Windows.Forms.Padding(5);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(226, 36);
@@ -62,7 +62,7 @@ namespace AISShopComputerParts
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 43);
+            this.label1.Location = new System.Drawing.Point(50, 42);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 29);
@@ -72,7 +72,7 @@ namespace AISShopComputerParts
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 107);
+            this.label2.Location = new System.Drawing.Point(53, 103);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 29);
@@ -81,7 +81,7 @@ namespace AISShopComputerParts
             // 
             // textbox
             // 
-            this.textbox.Location = new System.Drawing.Point(3, 130);
+            this.textbox.Location = new System.Drawing.Point(3, 126);
             this.textbox.Margin = new System.Windows.Forms.Padding(5);
             this.textbox.Name = "textbox";
             this.textbox.Size = new System.Drawing.Size(223, 36);
@@ -89,29 +89,29 @@ namespace AISShopComputerParts
             // 
             // picture
             // 
-            this.picture.Location = new System.Drawing.Point(8, 32);
+            this.picture.Location = new System.Drawing.Point(8, 31);
             this.picture.Margin = new System.Windows.Forms.Padding(5);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(210, 88);
+            this.picture.Size = new System.Drawing.Size(210, 85);
             this.picture.TabIndex = 6;
             this.picture.TabStop = false;
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(54, 403);
+            this.buttonExit.Location = new System.Drawing.Point(54, 389);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(5);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(226, 44);
+            this.buttonExit.Size = new System.Drawing.Size(226, 42);
             this.buttonExit.TabIndex = 7;
             this.buttonExit.Text = "Выйти из программы";
             this.buttonExit.UseVisualStyleBackColor = true;
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(54, 352);
+            this.buttonLogin.Location = new System.Drawing.Point(54, 340);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(5);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(226, 41);
+            this.buttonLogin.Size = new System.Drawing.Size(226, 40);
             this.buttonLogin.TabIndex = 8;
             this.buttonLogin.Text = "Войти";
             this.buttonLogin.UseVisualStyleBackColor = true;
@@ -131,18 +131,18 @@ namespace AISShopComputerParts
             // 
             this.captcha.Controls.Add(this.picture);
             this.captcha.Controls.Add(this.textbox);
-            this.captcha.Location = new System.Drawing.Point(54, 174);
+            this.captcha.Location = new System.Drawing.Point(54, 168);
             this.captcha.Name = "captcha";
-            this.captcha.Size = new System.Drawing.Size(226, 165);
+            this.captcha.Size = new System.Drawing.Size(226, 159);
             this.captcha.TabIndex = 10;
             this.captcha.TabStop = false;
             this.captcha.Text = "Каптча";
             // 
             // AutorizationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 461);
+            this.ClientSize = new System.Drawing.Size(334, 445);
             this.ControlBox = false;
             this.Controls.Add(this.captcha);
             this.Controls.Add(this.label4);
@@ -152,7 +152,7 @@ namespace AISShopComputerParts
             this.Controls.Add(this.label1);
             this.Controls.Add(this.password);
             this.Controls.Add(this.login);
-            this.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
