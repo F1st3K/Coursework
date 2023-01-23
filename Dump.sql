@@ -27,6 +27,7 @@ DROP TABLE IF EXISTS `Staffs`;
 CREATE TABLE `Staffs` (
   `idStaff` int(11) NOT NULL AUTO_INCREMENT,
   `fullName` varchar(45) NOT NULL,
+  `post` varchar(45) NOT NULL,
   `phoneNumber` varchar(11) NOT NULL,
   PRIMARY KEY (`idStaff`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -76,11 +77,11 @@ CREATE TABLE `orders` (
   `idOrder` int(11) NOT NULL AUTO_INCREMENT,
   `idsProducts` varchar(45) NOT NULL,
   `countProducts` int(11) NOT NULL,
-  `staff` int(11) NOT NULL,
+  `user` int(11) NOT NULL,
   PRIMARY KEY (`idOrder`),
   UNIQUE KEY `idOrder_UNIQUE` (`idOrder`),
-  KEY `idStaff_idx` (`staff`),
-  CONSTRAINT `staff` FOREIGN KEY (`staff`) REFERENCES `Staffs` (`idStaff`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `user_idx` (`user`),
+  CONSTRAINT `user` FOREIGN KEY (`user`) REFERENCES `users` (`idUser`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -130,9 +131,8 @@ DROP TABLE IF EXISTS `users`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
   `idUser` int(11) NOT NULL AUTO_INCREMENT,
-  `fullName` varchar(45) NOT NULL,
   `login` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
+  `password` varchar(1000) NOT NULL,
   `status` enum('admin','user') NOT NULL,
   `idStaff` int(11) NOT NULL,
   PRIMARY KEY (`idUser`),
@@ -161,4 +161,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-20 10:54:19
+-- Dump completed on 2023-01-23 13:43:27
