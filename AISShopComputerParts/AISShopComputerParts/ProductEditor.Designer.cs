@@ -49,16 +49,17 @@ namespace AISShopComputerParts
             this.back.Location = new System.Drawing.Point(465, 408);
             this.back.Name = "back";
             this.back.Size = new System.Drawing.Size(113, 41);
-            this.back.TabIndex = 53;
+            this.back.TabIndex = 54;
             this.back.Text = "В меню";
             this.back.UseVisualStyleBackColor = false;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // delete
             // 
             this.delete.Location = new System.Drawing.Point(324, 408);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(124, 41);
-            this.delete.TabIndex = 52;
+            this.delete.TabIndex = 53;
             this.delete.Text = "Удалить";
             this.delete.UseVisualStyleBackColor = false;
             // 
@@ -67,7 +68,7 @@ namespace AISShopComputerParts
             this.edit.Location = new System.Drawing.Point(145, 408);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(173, 41);
-            this.edit.TabIndex = 51;
+            this.edit.TabIndex = 52;
             this.edit.Text = "Редактировать";
             this.edit.UseVisualStyleBackColor = false;
             // 
@@ -76,7 +77,7 @@ namespace AISShopComputerParts
             this.add.Location = new System.Drawing.Point(15, 408);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(124, 41);
-            this.add.TabIndex = 50;
+            this.add.TabIndex = 51;
             this.add.Text = "Добавить";
             this.add.UseVisualStyleBackColor = false;
             // 
@@ -90,7 +91,7 @@ namespace AISShopComputerParts
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(563, 191);
-            this.dataGridView.TabIndex = 49;
+            this.dataGridView.TabIndex = 50;
             // 
             // charactirystics
             // 
@@ -98,7 +99,7 @@ namespace AISShopComputerParts
             this.charactirystics.Multiline = true;
             this.charactirystics.Name = "charactirystics";
             this.charactirystics.Size = new System.Drawing.Size(424, 105);
-            this.charactirystics.TabIndex = 48;
+            this.charactirystics.TabIndex = 49;
             // 
             // name
             // 
@@ -153,7 +154,7 @@ namespace AISShopComputerParts
             this.category.Location = new System.Drawing.Point(154, 54);
             this.category.Name = "category";
             this.category.Size = new System.Drawing.Size(424, 31);
-            this.category.TabIndex = 55;
+            this.category.TabIndex = 48;
             // 
             // ProductEditor
             // 

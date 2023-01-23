@@ -8,5 +8,12 @@ namespace AISShopComputerParts
         {
             InitializeComponent();
         }
+
+        private void exit_Click(object sender, System.EventArgs e)
+        {
+            var form = new AutorizationForm();
+            this.Hide();
+            form.Show();
+        }
     }
 }

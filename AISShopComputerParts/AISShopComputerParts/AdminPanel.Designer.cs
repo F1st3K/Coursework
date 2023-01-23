@@ -40,8 +40,8 @@ namespace AISShopComputerParts
             this.staffs = new System.Windows.Forms.Button();
             this.categories = new System.Windows.Forms.Button();
             this.salesAccounting = new System.Windows.Forms.Button();
-            this.picture = new System.Windows.Forms.PictureBox();
             this.products = new System.Windows.Forms.Button();
+            this.picture = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +53,7 @@ namespace AISShopComputerParts
             this.exit.TabIndex = 18;
             this.exit.Text = "Выйти из учетной записи\r\n";
             this.exit.UseVisualStyleBackColor = true;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // nameStaff
             // 
@@ -87,10 +88,11 @@ namespace AISShopComputerParts
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(454, 8);
+            this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(487, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(383, 23);
+            this.label1.Size = new System.Drawing.Size(396, 23);
             this.label1.TabIndex = 14;
             this.label1.Text = "Учет продажи компьютерных комплектующих";
             // 
@@ -102,6 +104,7 @@ namespace AISShopComputerParts
             this.users.TabIndex = 19;
             this.users.Text = "Пользователи";
             this.users.UseVisualStyleBackColor = true;
+            this.users.Click += new System.EventHandler(this.users_Click);
             // 
             // staffs
             // 
@@ -111,6 +114,7 @@ namespace AISShopComputerParts
             this.staffs.TabIndex = 20;
             this.staffs.Text = "Сотрудники";
             this.staffs.UseVisualStyleBackColor = true;
+            this.staffs.Click += new System.EventHandler(this.staffs_Click);
             // 
             // categories
             // 
@@ -120,15 +124,27 @@ namespace AISShopComputerParts
             this.categories.TabIndex = 21;
             this.categories.Text = "Категории товаров";
             this.categories.UseVisualStyleBackColor = true;
+            this.categories.Click += new System.EventHandler(this.categories_Click);
             // 
             // salesAccounting
             // 
             this.salesAccounting.Location = new System.Drawing.Point(14, 315);
             this.salesAccounting.Name = "salesAccounting";
             this.salesAccounting.Size = new System.Drawing.Size(340, 50);
-            this.salesAccounting.TabIndex = 22;
+            this.salesAccounting.TabIndex = 23;
             this.salesAccounting.Text = "Учет продаж";
             this.salesAccounting.UseVisualStyleBackColor = true;
+            this.salesAccounting.Click += new System.EventHandler(this.salesAccounting_Click);
+            // 
+            // products
+            // 
+            this.products.Location = new System.Drawing.Point(14, 259);
+            this.products.Name = "products";
+            this.products.Size = new System.Drawing.Size(340, 50);
+            this.products.TabIndex = 22;
+            this.products.Text = "Комплектующие";
+            this.products.UseVisualStyleBackColor = true;
+            this.products.Click += new System.EventHandler(this.products_Click);
             // 
             // picture
             // 
@@ -141,15 +157,6 @@ namespace AISShopComputerParts
             this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picture.TabIndex = 13;
             this.picture.TabStop = false;
-            // 
-            // products
-            // 
-            this.products.Location = new System.Drawing.Point(14, 259);
-            this.products.Name = "products";
-            this.products.Size = new System.Drawing.Size(340, 50);
-            this.products.TabIndex = 23;
-            this.products.Text = "Товары";
-            this.products.UseVisualStyleBackColor = true;
             // 
             // AdminPanel
             // 

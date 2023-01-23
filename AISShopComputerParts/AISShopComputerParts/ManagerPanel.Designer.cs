@@ -31,7 +31,6 @@ namespace AISShopComputerParts
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.nameStaff = new System.Windows.Forms.Label();
@@ -40,18 +39,10 @@ namespace AISShopComputerParts
             this.viewSales = new System.Windows.Forms.Button();
             this.createSale = new System.Windows.Forms.Button();
             this.picture = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(454, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(383, 23);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Учет продажи компьютерных комплектующих";
             // 
             // label2
             // 
@@ -91,6 +82,7 @@ namespace AISShopComputerParts
             this.exit.TabIndex = 12;
             this.exit.Text = "Выйти из учетной записи\r\n";
             this.exit.UseVisualStyleBackColor = true;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // viewProducts
             // 
@@ -98,12 +90,12 @@ namespace AISShopComputerParts
             this.viewProducts.Name = "viewProducts";
             this.viewProducts.Size = new System.Drawing.Size(322, 54);
             this.viewProducts.TabIndex = 13;
-            this.viewProducts.Text = "Просмотр запчастей";
+            this.viewProducts.Text = "Просмотр комплектующих";
             this.viewProducts.UseVisualStyleBackColor = true;
             // 
             // viewSales
             // 
-            this.viewSales.Location = new System.Drawing.Point(14, 186);
+            this.viewSales.Location = new System.Drawing.Point(14, 162);
             this.viewSales.Name = "viewSales";
             this.viewSales.Size = new System.Drawing.Size(322, 54);
             this.viewSales.TabIndex = 14;
@@ -112,11 +104,11 @@ namespace AISShopComputerParts
             // 
             // createSale
             // 
-            this.createSale.Location = new System.Drawing.Point(14, 275);
+            this.createSale.Location = new System.Drawing.Point(14, 282);
             this.createSale.Name = "createSale";
             this.createSale.Size = new System.Drawing.Size(322, 54);
-            this.createSale.TabIndex = 15;
-            this.createSale.Text = "Новая продажа";
+            this.createSale.TabIndex = 16;
+            this.createSale.Text = "Оформить продажу";
             this.createSale.UseVisualStyleBackColor = true;
             // 
             // picture
@@ -131,12 +123,34 @@ namespace AISShopComputerParts
             this.picture.TabIndex = 7;
             this.picture.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(489, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(396, 23);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Учет продажи компьютерных комплектующих";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(14, 222);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(322, 54);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Оформить приход комплектующих";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // ManagerPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 505);
             this.ControlBox = false;
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.createSale);
             this.Controls.Add(this.viewSales);
             this.Controls.Add(this.viewProducts);
@@ -144,7 +158,6 @@ namespace AISShopComputerParts
             this.Controls.Add(this.nameStaff);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.picture);
             this.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -172,10 +185,11 @@ namespace AISShopComputerParts
 
         private System.Windows.Forms.Label label2;
 
-        private System.Windows.Forms.Label label1;
-
         private System.Windows.Forms.PictureBox picture;
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -47,6 +47,7 @@ namespace AISShopComputerParts
             this.back.TabIndex = 53;
             this.back.Text = "В меню";
             this.back.UseVisualStyleBackColor = false;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // delete
             // 

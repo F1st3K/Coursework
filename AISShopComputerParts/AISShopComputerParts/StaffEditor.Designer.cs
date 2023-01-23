@@ -48,16 +48,17 @@ namespace AISShopComputerParts
             this.back.Location = new System.Drawing.Point(463, 307);
             this.back.Name = "back";
             this.back.Size = new System.Drawing.Size(113, 41);
-            this.back.TabIndex = 42;
+            this.back.TabIndex = 43;
             this.back.Text = "В меню";
             this.back.UseVisualStyleBackColor = false;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // delete
             // 
             this.delete.Location = new System.Drawing.Point(322, 307);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(124, 41);
-            this.delete.TabIndex = 41;
+            this.delete.TabIndex = 42;
             this.delete.Text = "Удалить";
             this.delete.UseVisualStyleBackColor = false;
             // 
@@ -66,7 +67,7 @@ namespace AISShopComputerParts
             this.edit.Location = new System.Drawing.Point(143, 307);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(173, 41);
-            this.edit.TabIndex = 40;
+            this.edit.TabIndex = 41;
             this.edit.Text = "Редактировать";
             this.edit.UseVisualStyleBackColor = false;
             // 
@@ -75,7 +76,7 @@ namespace AISShopComputerParts
             this.add.Location = new System.Drawing.Point(13, 307);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(124, 41);
-            this.add.TabIndex = 39;
+            this.add.TabIndex = 40;
             this.add.Text = "Добавить";
             this.add.UseVisualStyleBackColor = false;
             // 
@@ -89,7 +90,7 @@ namespace AISShopComputerParts
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(563, 202);
-            this.dataGridView.TabIndex = 38;
+            this.dataGridView.TabIndex = 39;
             // 
             // post
             // 
@@ -141,7 +142,7 @@ namespace AISShopComputerParts
             this.phoneNumber.Mask = "+7 (999) 000-0000";
             this.phoneNumber.Name = "phoneNumber";
             this.phoneNumber.Size = new System.Drawing.Size(149, 31);
-            this.phoneNumber.TabIndex = 43;
+            this.phoneNumber.TabIndex = 38;
             // 
             // StaffEditor
             // 

@@ -148,6 +148,7 @@ namespace AISShopComputerParts
             this.back.TabIndex = 29;
             this.back.Text = "В меню";
             this.back.UseVisualStyleBackColor = false;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // status
             // 
@@ -155,7 +156,7 @@ namespace AISShopComputerParts
             this.status.Location = new System.Drawing.Point(417, 13);
             this.status.Name = "status";
             this.status.Size = new System.Drawing.Size(155, 30);
-            this.status.TabIndex = 30;
+            this.status.TabIndex = 23;
             // 
             // staff
             // 
@@ -163,7 +164,7 @@ namespace AISShopComputerParts
             this.staff.Location = new System.Drawing.Point(417, 54);
             this.staff.Name = "staff";
             this.staff.Size = new System.Drawing.Size(155, 30);
-            this.staff.TabIndex = 31;
+            this.staff.TabIndex = 24;
             // 
             // UserEditor
             // 

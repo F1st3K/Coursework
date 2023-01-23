@@ -34,13 +34,13 @@ namespace AISShopComputerParts
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textbox = new System.Windows.Forms.TextBox();
-            this.picture = new System.Windows.Forms.PictureBox();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.captcha = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize) (this.picture)).BeginInit();
+            this.picture = new System.Windows.Forms.PictureBox();
             this.captcha.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
             // 
             // login
@@ -48,7 +48,7 @@ namespace AISShopComputerParts
             this.login.Location = new System.Drawing.Point(54, 69);
             this.login.Margin = new System.Windows.Forms.Padding(5);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(226, 36);
+            this.login.Size = new System.Drawing.Size(226, 30);
             this.login.TabIndex = 0;
             // 
             // password
@@ -56,7 +56,7 @@ namespace AISShopComputerParts
             this.password.Location = new System.Drawing.Point(54, 130);
             this.password.Margin = new System.Windows.Forms.Padding(5);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(226, 36);
+            this.password.Size = new System.Drawing.Size(226, 30);
             this.password.TabIndex = 1;
             // 
             // label1
@@ -65,7 +65,7 @@ namespace AISShopComputerParts
             this.label1.Location = new System.Drawing.Point(50, 42);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 29);
+            this.label1.Size = new System.Drawing.Size(59, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "Логин";
             // 
@@ -75,7 +75,7 @@ namespace AISShopComputerParts
             this.label2.Location = new System.Drawing.Point(53, 103);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 29);
+            this.label2.Size = new System.Drawing.Size(70, 23);
             this.label2.TabIndex = 3;
             this.label2.Text = "Пароль";
             // 
@@ -84,8 +84,53 @@ namespace AISShopComputerParts
             this.textbox.Location = new System.Drawing.Point(3, 126);
             this.textbox.Margin = new System.Windows.Forms.Padding(5);
             this.textbox.Name = "textbox";
-            this.textbox.Size = new System.Drawing.Size(223, 36);
-            this.textbox.TabIndex = 5;
+            this.textbox.Size = new System.Drawing.Size(223, 30);
+            this.textbox.TabIndex = 2;
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Location = new System.Drawing.Point(54, 389);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(226, 42);
+            this.buttonExit.TabIndex = 4;
+            this.buttonExit.Text = "Выйти из программы";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // buttonLogin
+            // 
+            this.buttonLogin.Location = new System.Drawing.Point(54, 340);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(226, 40);
+            this.buttonLogin.TabIndex = 3;
+            this.buttonLogin.Text = "Войти";
+            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(85, 9);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(167, 33);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Авторизация";
+            // 
+            // captcha
+            // 
+            this.captcha.Controls.Add(this.picture);
+            this.captcha.Controls.Add(this.textbox);
+            this.captcha.Enabled = false;
+            this.captcha.Location = new System.Drawing.Point(54, 168);
+            this.captcha.Name = "captcha";
+            this.captcha.Size = new System.Drawing.Size(226, 159);
+            this.captcha.TabIndex = 10;
+            this.captcha.TabStop = false;
+            this.captcha.Text = "Каптча";
             // 
             // picture
             // 
@@ -96,51 +141,9 @@ namespace AISShopComputerParts
             this.picture.TabIndex = 6;
             this.picture.TabStop = false;
             // 
-            // buttonExit
-            // 
-            this.buttonExit.Location = new System.Drawing.Point(54, 389);
-            this.buttonExit.Margin = new System.Windows.Forms.Padding(5);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(226, 42);
-            this.buttonExit.TabIndex = 7;
-            this.buttonExit.Text = "Выйти из программы";
-            this.buttonExit.UseVisualStyleBackColor = true;
-            // 
-            // buttonLogin
-            // 
-            this.buttonLogin.Location = new System.Drawing.Point(54, 340);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(5);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(226, 40);
-            this.buttonLogin.TabIndex = 8;
-            this.buttonLogin.Text = "Войти";
-            this.buttonLogin.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.label4.Location = new System.Drawing.Point(85, 9);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(211, 41);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Авторизация";
-            // 
-            // captcha
-            // 
-            this.captcha.Controls.Add(this.picture);
-            this.captcha.Controls.Add(this.textbox);
-            this.captcha.Location = new System.Drawing.Point(54, 168);
-            this.captcha.Name = "captcha";
-            this.captcha.Size = new System.Drawing.Size(226, 159);
-            this.captcha.TabIndex = 10;
-            this.captcha.TabStop = false;
-            this.captcha.Text = "Каптча";
-            // 
             // AutorizationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 445);
             this.ControlBox = false;
@@ -152,18 +155,19 @@ namespace AISShopComputerParts
             this.Controls.Add(this.label1);
             this.Controls.Add(this.password);
             this.Controls.Add(this.login);
-            this.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AutorizationForm";
             this.Text = "Авторизация";
-            ((System.ComponentModel.ISupportInitialize) (this.picture)).EndInit();
             this.captcha.ResumeLayout(false);
             this.captcha.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
