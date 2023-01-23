@@ -161,6 +161,7 @@ namespace AISShopComputerParts
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AutorizationForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
             this.captcha.ResumeLayout(false);
             this.captcha.PerformLayout();

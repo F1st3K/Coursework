@@ -165,6 +165,7 @@ namespace AISShopComputerParts
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ManagerPanel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManagerPanel";
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             this.ResumeLayout(false);

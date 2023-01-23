@@ -181,6 +181,7 @@ namespace AISShopComputerParts
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AdminPanel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminPanel";
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             this.ResumeLayout(false);

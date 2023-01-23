@@ -36,48 +36,61 @@ namespace AISShopComputerParts
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.charactirystics = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.category = new System.Windows.Forms.ComboBox();
+            this.id = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.count = new System.Windows.Forms.NumericUpDown();
+            this.price = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.selectPicture = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.id)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.count)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.price)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // back
             // 
-            this.back.Location = new System.Drawing.Point(465, 408);
+            this.back.Location = new System.Drawing.Point(759, 508);
             this.back.Name = "back";
             this.back.Size = new System.Drawing.Size(113, 41);
-            this.back.TabIndex = 54;
+            this.back.TabIndex = 57;
             this.back.Text = "В меню";
             this.back.UseVisualStyleBackColor = false;
             this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(324, 408);
+            this.delete.Location = new System.Drawing.Point(324, 508);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(124, 41);
-            this.delete.TabIndex = 53;
+            this.delete.TabIndex = 56;
             this.delete.Text = "Удалить";
             this.delete.UseVisualStyleBackColor = false;
             // 
             // edit
             // 
-            this.edit.Location = new System.Drawing.Point(145, 408);
+            this.edit.Location = new System.Drawing.Point(145, 508);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(173, 41);
-            this.edit.TabIndex = 52;
+            this.edit.TabIndex = 55;
             this.edit.Text = "Редактировать";
             this.edit.UseVisualStyleBackColor = false;
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(15, 408);
+            this.add.Location = new System.Drawing.Point(15, 508);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(124, 41);
-            this.add.TabIndex = 51;
+            this.add.TabIndex = 54;
             this.add.Text = "Добавить";
             this.add.UseVisualStyleBackColor = false;
             // 
@@ -86,42 +99,32 @@ namespace AISShopComputerParts
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(15, 211);
+            this.dataGridView.Location = new System.Drawing.Point(15, 274);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(563, 191);
-            this.dataGridView.TabIndex = 50;
+            this.dataGridView.Size = new System.Drawing.Size(857, 228);
+            this.dataGridView.TabIndex = 54;
             // 
             // charactirystics
             // 
-            this.charactirystics.Location = new System.Drawing.Point(154, 100);
+            this.charactirystics.Location = new System.Drawing.Point(145, 87);
             this.charactirystics.Multiline = true;
             this.charactirystics.Name = "charactirystics";
-            this.charactirystics.Size = new System.Drawing.Size(424, 105);
-            this.charactirystics.TabIndex = 49;
+            this.charactirystics.Size = new System.Drawing.Size(509, 144);
+            this.charactirystics.TabIndex = 50;
             // 
             // name
             // 
-            this.name.Location = new System.Drawing.Point(154, 12);
+            this.name.Location = new System.Drawing.Point(145, 50);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(424, 31);
-            this.name.TabIndex = 47;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(339, 57);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 23);
-            this.label4.TabIndex = 46;
-            this.label4.Text = "Телефон:\r\n";
+            this.name.Size = new System.Drawing.Size(727, 31);
+            this.name.TabIndex = 48;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 103);
+            this.label1.Location = new System.Drawing.Point(-5, 90);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 23);
@@ -131,7 +134,7 @@ namespace AISShopComputerParts
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 15);
+            this.label3.Location = new System.Drawing.Point(2, 53);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 23);
@@ -141,7 +144,7 @@ namespace AISShopComputerParts
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 57);
+            this.label2.Location = new System.Drawing.Point(273, 15);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 23);
@@ -151,17 +154,104 @@ namespace AISShopComputerParts
             // category
             // 
             this.category.FormattingEnabled = true;
-            this.category.Location = new System.Drawing.Point(154, 54);
+            this.category.Location = new System.Drawing.Point(377, 12);
             this.category.Name = "category";
-            this.category.Size = new System.Drawing.Size(424, 31);
-            this.category.TabIndex = 48;
+            this.category.Size = new System.Drawing.Size(495, 31);
+            this.category.TabIndex = 49;
+            // 
+            // id
+            // 
+            this.id.Location = new System.Drawing.Point(145, 13);
+            this.id.Name = "id";
+            this.id.Size = new System.Drawing.Size(120, 31);
+            this.id.TabIndex = 47;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(92, 15);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 23);
+            this.label4.TabIndex = 56;
+            this.label4.Text = "Код:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(20, 239);
+            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(117, 23);
+            this.label5.TabIndex = 57;
+            this.label5.Text = "Колличество:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(314, 239);
+            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 23);
+            this.label6.TabIndex = 58;
+            this.label6.Text = "Цена:";
+            // 
+            // count
+            // 
+            this.count.Location = new System.Drawing.Point(145, 237);
+            this.count.Name = "count";
+            this.count.Size = new System.Drawing.Size(120, 31);
+            this.count.TabIndex = 51;
+            // 
+            // price
+            // 
+            this.price.Location = new System.Drawing.Point(377, 237);
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(120, 31);
+            this.price.TabIndex = 52;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(599, 239);
+            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 23);
+            this.label7.TabIndex = 61;
+            this.label7.Text = "Фото:";
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(661, 87);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(211, 144);
+            this.pictureBox.TabIndex = 62;
+            this.pictureBox.TabStop = false;
+            // 
+            // selectPicture
+            // 
+            this.selectPicture.Location = new System.Drawing.Point(661, 237);
+            this.selectPicture.Name = "selectPicture";
+            this.selectPicture.Size = new System.Drawing.Size(211, 31);
+            this.selectPicture.TabIndex = 53;
+            this.selectPicture.Text = "Выбрать фото";
+            this.selectPicture.UseVisualStyleBackColor = true;
             // 
             // ProductEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 461);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.ControlBox = false;
+            this.Controls.Add(this.selectPicture);
+            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.price);
+            this.Controls.Add(this.count);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.id);
             this.Controls.Add(this.category);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.back);
@@ -171,17 +261,21 @@ namespace AISShopComputerParts
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.charactirystics);
             this.Controls.Add(this.name);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ProductEditor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductEditor";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.id)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.count)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.price)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,10 +289,19 @@ namespace AISShopComputerParts
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.TextBox charactirystics;
         private System.Windows.Forms.TextBox name;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox category;
+        private System.Windows.Forms.NumericUpDown id;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown count;
+        private System.Windows.Forms.NumericUpDown price;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Button selectPicture;
     }
 }
