@@ -16,7 +16,7 @@ namespace AISShopComputerParts
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ManagerPanel());
+            Application.Run(new UserEditor());
         }
     }
 }
