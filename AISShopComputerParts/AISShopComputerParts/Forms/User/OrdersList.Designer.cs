@@ -1,7 +1,7 @@
 ﻿
 namespace AISShopComputerParts
 {
-    partial class OrderList
+    partial class OrdersList
     {
         /// <summary>
         /// Required designer variable.
@@ -333,7 +333,7 @@ namespace AISShopComputerParts
             this.dataGridView.Size = new System.Drawing.Size(980, 346);
             this.dataGridView.TabIndex = 109;
             // 
-            // OrderList
+            // OrdersList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -357,9 +357,9 @@ namespace AISShopComputerParts
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "OrderList";
+            this.Name = "OrdersList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "OrderList";
+            this.Text = "Список продаж";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupSort.ResumeLayout(false);

@@ -125,7 +125,7 @@ namespace AISShopComputerParts
             this.MinimizeBox = false;
             this.Name = "CategoryEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CategoryEditor";
+            this.Text = "Редактор категорий";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

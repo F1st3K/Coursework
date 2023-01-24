@@ -46,7 +46,7 @@ namespace AISShopComputerParts
 
         private void salesAccounting_Click(object sender, System.EventArgs e)
         {
-            var form = new OrderRecorder();
+            var form = new OrdersRecorder();
             this.Hide();
             form.Show();
         }

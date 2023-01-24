@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace AISShopComputerParts
 {
-    public partial class ViewerOrder : Form
+    public partial class OrderEditor : Form
     {
-        public ViewerOrder()
+        public OrderEditor()
         {
             InitializeComponent();
         }
 
         private void orders_Click(object sender, EventArgs e)
         {
-            var form = new OrderList();
+            var form = new OrdersRecorder();
             this.Hide();
             form.Show();
         }

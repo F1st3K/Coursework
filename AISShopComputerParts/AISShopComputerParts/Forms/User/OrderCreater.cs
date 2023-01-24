@@ -26,7 +26,7 @@ namespace AISShopComputerParts
 
         private void viewOrder_Click(object sender, EventArgs e)
         {
-            var form = new PreviewerOrder();
+            var form = new OrderPreviewer();
             this.Hide();
             form.Show();
         }

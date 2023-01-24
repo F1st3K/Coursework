@@ -1,6 +1,6 @@
 ﻿namespace AISShopComputerParts
 {
-    partial class OrderRecorder
+    partial class OrdersRecorder
     {
         /// <summary>
         /// Required designer variable.
@@ -40,24 +40,24 @@
             this.allPrice = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupSearch = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.textSearch = new System.Windows.Forms.TextBox();
             this.groupSort = new System.Windows.Forms.GroupBox();
-            this.byDate = new System.Windows.Forms.Button();
-            this.clear = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.clear = new System.Windows.Forms.Button();
+            this.byDate = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dateStart = new System.Windows.Forms.DateTimePicker();
-            this.dateFinish = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.statusPositive = new System.Windows.Forms.RadioButton();
-            this.statusNegative = new System.Windows.Forms.RadioButton();
-            this.staff = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.staff = new System.Windows.Forms.ComboBox();
+            this.statusNegative = new System.Windows.Forms.RadioButton();
+            this.statusPositive = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dateFinish = new System.Windows.Forms.DateTimePicker();
+            this.dateStart = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.exportExcel = new System.Windows.Forms.Button();
             this.viewOrder = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupSearch.SuspendLayout();
             this.groupSort.SuspendLayout();
@@ -187,6 +187,16 @@
             this.groupSearch.TabStop = false;
             this.groupSearch.Text = "Поиск";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 28);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 23);
+            this.label2.TabIndex = 109;
+            this.label2.Text = "Код заказа";
+            // 
             // textSearch
             // 
             this.textSearch.Location = new System.Drawing.Point(112, 25);
@@ -206,14 +216,15 @@
             this.groupSort.TabStop = false;
             this.groupSort.Text = "Сортировка";
             // 
-            // byDate
+            // label5
             // 
-            this.byDate.Location = new System.Drawing.Point(7, 40);
-            this.byDate.Name = "byDate";
-            this.byDate.Size = new System.Drawing.Size(297, 32);
-            this.byDate.TabIndex = 1;
-            this.byDate.Text = "Дата заказа";
-            this.byDate.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(348, 45);
+            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(27, 23);
+            this.label5.TabIndex = 101;
+            this.label5.Text = "\t↓";
             // 
             // clear
             // 
@@ -224,15 +235,14 @@
             this.clear.Text = "Сброс";
             this.clear.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // byDate
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(348, 45);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 23);
-            this.label5.TabIndex = 101;
-            this.label5.Text = "\t↓";
+            this.byDate.Location = new System.Drawing.Point(7, 40);
+            this.byDate.Name = "byDate";
+            this.byDate.Size = new System.Drawing.Size(297, 32);
+            this.byDate.TabIndex = 1;
+            this.byDate.Text = "Дата заказа";
+            this.byDate.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -252,60 +262,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Фильтрация";
             // 
-            // label4
+            // label9
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 42);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 23);
-            this.label4.TabIndex = 99;
-            this.label4.Text = "От:";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(8, 157);
+            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 23);
+            this.label9.TabIndex = 108;
+            this.label9.Text = "Сотрудник:";
             // 
-            // label6
+            // staff
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 97);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 23);
-            this.label6.TabIndex = 100;
-            this.label6.Text = "До:";
-            // 
-            // dateStart
-            // 
-            this.dateStart.Location = new System.Drawing.Point(51, 36);
-            this.dateStart.Name = "dateStart";
-            this.dateStart.Size = new System.Drawing.Size(200, 31);
-            this.dateStart.TabIndex = 101;
-            // 
-            // dateFinish
-            // 
-            this.dateFinish.Location = new System.Drawing.Point(51, 91);
-            this.dateFinish.Name = "dateFinish";
-            this.dateFinish.Size = new System.Drawing.Size(200, 31);
-            this.dateFinish.TabIndex = 102;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(285, 15);
-            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 23);
-            this.label7.TabIndex = 103;
-            this.label7.Text = "Статус:";
-            // 
-            // statusPositive
-            // 
-            this.statusPositive.AutoSize = true;
-            this.statusPositive.Location = new System.Drawing.Point(319, 42);
-            this.statusPositive.Name = "statusPositive";
-            this.statusPositive.Size = new System.Drawing.Size(110, 27);
-            this.statusPositive.TabIndex = 106;
-            this.statusPositive.TabStop = true;
-            this.statusPositive.Text = "Выполнен";
-            this.statusPositive.UseVisualStyleBackColor = true;
+            this.staff.FormattingEnabled = true;
+            this.staff.Location = new System.Drawing.Point(12, 192);
+            this.staff.Name = "staff";
+            this.staff.Size = new System.Drawing.Size(518, 31);
+            this.staff.TabIndex = 2;
             // 
             // statusNegative
             // 
@@ -318,23 +291,60 @@
             this.statusNegative.Text = "Отменен";
             this.statusNegative.UseVisualStyleBackColor = true;
             // 
-            // staff
+            // statusPositive
             // 
-            this.staff.FormattingEnabled = true;
-            this.staff.Location = new System.Drawing.Point(12, 192);
-            this.staff.Name = "staff";
-            this.staff.Size = new System.Drawing.Size(518, 31);
-            this.staff.TabIndex = 2;
+            this.statusPositive.AutoSize = true;
+            this.statusPositive.Location = new System.Drawing.Point(319, 42);
+            this.statusPositive.Name = "statusPositive";
+            this.statusPositive.Size = new System.Drawing.Size(110, 27);
+            this.statusPositive.TabIndex = 106;
+            this.statusPositive.TabStop = true;
+            this.statusPositive.Text = "Выполнен";
+            this.statusPositive.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // label7
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 157);
-            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 23);
-            this.label9.TabIndex = 108;
-            this.label9.Text = "Сотрудник:";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(285, 15);
+            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 23);
+            this.label7.TabIndex = 103;
+            this.label7.Text = "Статус:";
+            // 
+            // dateFinish
+            // 
+            this.dateFinish.Location = new System.Drawing.Point(51, 91);
+            this.dateFinish.Name = "dateFinish";
+            this.dateFinish.Size = new System.Drawing.Size(200, 31);
+            this.dateFinish.TabIndex = 102;
+            // 
+            // dateStart
+            // 
+            this.dateStart.Location = new System.Drawing.Point(51, 36);
+            this.dateStart.Name = "dateStart";
+            this.dateStart.Size = new System.Drawing.Size(200, 31);
+            this.dateStart.TabIndex = 101;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 97);
+            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 23);
+            this.label6.TabIndex = 100;
+            this.label6.Text = "До:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 42);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 23);
+            this.label4.TabIndex = 99;
+            this.label4.Text = "От:";
             // 
             // exportExcel
             // 
@@ -355,17 +365,7 @@
             this.viewOrder.UseVisualStyleBackColor = false;
             this.viewOrder.Click += new System.EventHandler(this.viewOrder_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 28);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 23);
-            this.label2.TabIndex = 109;
-            this.label2.Text = "Код заказа";
-            // 
-            // OrderRecorder
+            // OrdersRecorder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -392,9 +392,9 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "OrderRecorder";
+            this.Name = "OrdersRecorder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "OrderRecorder";
+            this.Text = "Учет продаж";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.groupSearch.ResumeLayout(false);
             this.groupSearch.PerformLayout();

@@ -32,7 +32,7 @@ namespace AISShopComputerParts
 
         private void viewSales_Click(object sender, System.EventArgs e)
         {
-            var form = new OrderList();
+            var form = new OrdersList();
             this.Hide();
             form.Show();
         }

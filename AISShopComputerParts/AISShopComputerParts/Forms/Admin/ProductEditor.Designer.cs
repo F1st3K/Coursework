@@ -294,7 +294,7 @@ namespace AISShopComputerParts
             this.MinimizeBox = false;
             this.Name = "ProductEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ProductEditor";
+            this.Text = "Редактор комплектующих";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.id)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.count)).EndInit();

@@ -53,11 +53,11 @@
     <Compile Include="Forms\Admin\AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\EditorOrder.cs">
+    <Compile Include="Forms\Admin\OrderEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\EditorOrder.Designer.cs">
-      <DependentUpon>EditorOrder.cs</DependentUpon>
+    <Compile Include="Forms\Admin\OrderEditor.Designer.cs">
+      <DependentUpon>OrderEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AutorizationForm.cs">
       <SubType>Form</SubType>
@@ -77,11 +77,11 @@
     <Compile Include="Forms\User\ManagerPanel.Designer.cs">
       <DependentUpon>ManagerPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\OrderRecorder.cs">
+    <Compile Include="Forms\Admin\OrdersRecorder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\OrderRecorder.Designer.cs">
-      <DependentUpon>OrderRecorder.cs</DependentUpon>
+    <Compile Include="Forms\Admin\OrdersRecorder.Designer.cs">
+      <DependentUpon>OrdersRecorder.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin\ProductEditor.cs">
       <SubType>Form</SubType>
@@ -95,17 +95,17 @@
     <Compile Include="Forms\User\OrderCreater.Designer.cs">
       <DependentUpon>OrderCreater.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User\OrderList.cs">
+    <Compile Include="Forms\User\OrdersList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\User\OrderList.Designer.cs">
-      <DependentUpon>OrderList.cs</DependentUpon>
+    <Compile Include="Forms\User\OrdersList.Designer.cs">
+      <DependentUpon>OrdersList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User\PreviewerOrder.cs">
+    <Compile Include="Forms\User\OrderPreviewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\User\PreviewerOrder.Designer.cs">
-      <DependentUpon>PreviewerOrder.cs</DependentUpon>
+    <Compile Include="Forms\User\OrderPreviewer.Designer.cs">
+      <DependentUpon>OrderPreviewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\User\ProductViewer.cs">
       <SubType>Form</SubType>
@@ -113,11 +113,11 @@
     <Compile Include="Forms\User\ProductViewer.Designer.cs">
       <DependentUpon>ProductViewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User\ViewerOrder.cs">
+    <Compile Include="Forms\User\OrderViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\User\ViewerOrder.Designer.cs">
-      <DependentUpon>ViewerOrder.cs</DependentUpon>
+    <Compile Include="Forms\User\OrderViewer.Designer.cs">
+      <DependentUpon>OrderViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,8 +136,8 @@
     <EmbeddedResource Include="Forms\Admin\AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\EditorOrder.resx">
-      <DependentUpon>EditorOrder.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin\OrderEditor.resx">
+      <DependentUpon>OrderEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AutorizationForm.resx">
       <DependentUpon>AutorizationForm.cs</DependentUpon>
@@ -148,8 +148,8 @@
     <EmbeddedResource Include="Forms\User\ManagerPanel.resx">
       <DependentUpon>ManagerPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\OrderRecorder.resx">
-      <DependentUpon>OrderRecorder.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin\OrdersRecorder.resx">
+      <DependentUpon>OrdersRecorder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\ProductEditor.resx">
       <DependentUpon>ProductEditor.cs</DependentUpon>
@@ -157,17 +157,17 @@
     <EmbeddedResource Include="Forms\User\OrderCreater.resx">
       <DependentUpon>OrderCreater.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User\OrderList.resx">
-      <DependentUpon>OrderList.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\User\OrdersList.resx">
+      <DependentUpon>OrdersList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User\PreviewerOrder.resx">
-      <DependentUpon>PreviewerOrder.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\User\OrderPreviewer.resx">
+      <DependentUpon>OrderPreviewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User\ProductViewer.resx">
       <DependentUpon>ProductViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User\ViewerOrder.resx">
-      <DependentUpon>ViewerOrder.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\User\OrderViewer.resx">
+      <DependentUpon>OrderViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

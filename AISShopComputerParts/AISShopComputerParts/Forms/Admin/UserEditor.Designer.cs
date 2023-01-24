@@ -192,7 +192,7 @@ namespace AISShopComputerParts
             this.MinimizeBox = false;
             this.Name = "UserEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UserEditor";
+            this.Text = "Редактор пользователей";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

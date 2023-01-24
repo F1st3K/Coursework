@@ -168,7 +168,7 @@ namespace AISShopComputerParts
             this.MinimizeBox = false;
             this.Name = "StaffEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "StaffEditor";
+            this.Text = "Редактор сотрудников";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

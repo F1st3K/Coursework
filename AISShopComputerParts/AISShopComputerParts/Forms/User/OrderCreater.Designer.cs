@@ -34,6 +34,7 @@ namespace AISShopComputerParts
             this.addToCart = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.countOnAdd = new System.Windows.Forms.NumericUpDown();
+            this.picture = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.charactirystics = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,14 +50,13 @@ namespace AISShopComputerParts
             this.countOnCart = new System.Windows.Forms.NumericUpDown();
             this.viewOrder = new System.Windows.Forms.Button();
             this.back = new System.Windows.Forms.Button();
-            this.picture = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupProducts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.countOnAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.groupCart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.countOnCart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView
@@ -116,6 +116,14 @@ namespace AISShopComputerParts
             this.countOnAdd.Name = "countOnAdd";
             this.countOnAdd.Size = new System.Drawing.Size(153, 31);
             this.countOnAdd.TabIndex = 93;
+            // 
+            // picture
+            // 
+            this.picture.Location = new System.Drawing.Point(286, 492);
+            this.picture.Name = "picture";
+            this.picture.Size = new System.Drawing.Size(180, 144);
+            this.picture.TabIndex = 92;
+            this.picture.TabStop = false;
             // 
             // label7
             // 
@@ -257,14 +265,6 @@ namespace AISShopComputerParts
             this.back.UseVisualStyleBackColor = true;
             this.back.Click += new System.EventHandler(this.back_Click);
             // 
-            // picture
-            // 
-            this.picture.Location = new System.Drawing.Point(286, 492);
-            this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(180, 144);
-            this.picture.TabIndex = 92;
-            this.picture.TabStop = false;
-            // 
             // OrderCreater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -282,16 +282,16 @@ namespace AISShopComputerParts
             this.MinimizeBox = false;
             this.Name = "OrderCreater";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "OrderCreater";
+            this.Text = "Создание продажи";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.groupProducts.ResumeLayout(false);
             this.groupProducts.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.countOnAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             this.groupCart.ResumeLayout(false);
             this.groupCart.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.countOnCart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             this.ResumeLayout(false);
 
         }

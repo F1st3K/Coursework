@@ -343,7 +343,7 @@
             this.MinimizeBox = false;
             this.Name = "ProductViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ProductViewer";
+            this.Text = "Просмотр комплектующих";
             ((System.ComponentModel.ISupportInitialize)(this.price)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.count)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.id)).EndInit();
