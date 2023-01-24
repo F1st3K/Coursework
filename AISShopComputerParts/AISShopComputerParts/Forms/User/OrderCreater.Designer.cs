@@ -1,5 +1,5 @@
 ﻿
-namespace AISShopComputerParts.Forms.User
+namespace AISShopComputerParts
 {
     partial class OrderCreater
     {
@@ -49,6 +49,7 @@ namespace AISShopComputerParts.Forms.User
             this.delete = new System.Windows.Forms.Button();
             this.clear = new System.Windows.Forms.Button();
             this.viewOrder = new System.Windows.Forms.Button();
+            this.back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupProducts.SuspendLayout();
             this.groupCart.SuspendLayout();
@@ -249,12 +250,22 @@ namespace AISShopComputerParts.Forms.User
             // 
             // viewOrder
             // 
-            this.viewOrder.Location = new System.Drawing.Point(687, 609);
+            this.viewOrder.Location = new System.Drawing.Point(792, 624);
             this.viewOrder.Name = "viewOrder";
-            this.viewOrder.Size = new System.Drawing.Size(274, 82);
+            this.viewOrder.Size = new System.Drawing.Size(180, 82);
             this.viewOrder.TabIndex = 99;
             this.viewOrder.Text = "Просмотреть заказ";
             this.viewOrder.UseVisualStyleBackColor = true;
+            // 
+            // back
+            // 
+            this.back.Location = new System.Drawing.Point(524, 646);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(246, 39);
+            this.back.TabIndex = 100;
+            this.back.Text = "Отменить и выйти в меню";
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // OrderCreater
             // 
@@ -262,6 +273,7 @@ namespace AISShopComputerParts.Forms.User
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 711);
             this.ControlBox = false;
+            this.Controls.Add(this.back);
             this.Controls.Add(this.viewOrder);
             this.Controls.Add(this.groupCart);
             this.Controls.Add(this.groupProducts);
@@ -308,5 +320,6 @@ namespace AISShopComputerParts.Forms.User
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown countOnCart;
         private System.Windows.Forms.Button viewOrder;
+        private System.Windows.Forms.Button back;
     }
 }
