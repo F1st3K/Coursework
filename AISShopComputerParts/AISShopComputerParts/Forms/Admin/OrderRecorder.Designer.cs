@@ -40,13 +40,10 @@
             this.allPrice = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupSearch = new System.Windows.Forms.GroupBox();
-            this.selectSearch = new System.Windows.Forms.ComboBox();
             this.textSearch = new System.Windows.Forms.TextBox();
             this.groupSort = new System.Windows.Forms.GroupBox();
-            this.byPrice = new System.Windows.Forms.Button();
             this.byDate = new System.Windows.Forms.Button();
             this.clear = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,6 +57,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.exportExcel = new System.Windows.Forms.Button();
             this.viewOrder = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupSearch.SuspendLayout();
             this.groupSort.SuspendLayout();
@@ -134,6 +132,7 @@
             this.back.TabIndex = 94;
             this.back.Text = "В меню";
             this.back.UseVisualStyleBackColor = false;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // dataGridView
             // 
@@ -179,8 +178,8 @@
             // 
             // groupSearch
             // 
+            this.groupSearch.Controls.Add(this.label2);
             this.groupSearch.Controls.Add(this.textSearch);
-            this.groupSearch.Controls.Add(this.selectSearch);
             this.groupSearch.Location = new System.Drawing.Point(553, 386);
             this.groupSearch.Name = "groupSearch";
             this.groupSearch.Size = new System.Drawing.Size(417, 65);
@@ -188,28 +187,18 @@
             this.groupSearch.TabStop = false;
             this.groupSearch.Text = "Поиск";
             // 
-            // selectSearch
-            // 
-            this.selectSearch.FormattingEnabled = true;
-            this.selectSearch.Location = new System.Drawing.Point(6, 25);
-            this.selectSearch.Name = "selectSearch";
-            this.selectSearch.Size = new System.Drawing.Size(121, 31);
-            this.selectSearch.TabIndex = 0;
-            // 
             // textSearch
             // 
-            this.textSearch.Location = new System.Drawing.Point(133, 25);
+            this.textSearch.Location = new System.Drawing.Point(112, 25);
             this.textSearch.Name = "textSearch";
-            this.textSearch.Size = new System.Drawing.Size(278, 31);
+            this.textSearch.Size = new System.Drawing.Size(299, 31);
             this.textSearch.TabIndex = 1;
             // 
             // groupSort
             // 
             this.groupSort.Controls.Add(this.label5);
-            this.groupSort.Controls.Add(this.label2);
             this.groupSort.Controls.Add(this.clear);
             this.groupSort.Controls.Add(this.byDate);
-            this.groupSort.Controls.Add(this.byPrice);
             this.groupSort.Location = new System.Drawing.Point(555, 469);
             this.groupSort.Name = "groupSort";
             this.groupSort.Size = new System.Drawing.Size(417, 154);
@@ -217,18 +206,9 @@
             this.groupSort.TabStop = false;
             this.groupSort.Text = "Сортировка";
             // 
-            // byPrice
-            // 
-            this.byPrice.Location = new System.Drawing.Point(7, 31);
-            this.byPrice.Name = "byPrice";
-            this.byPrice.Size = new System.Drawing.Size(297, 32);
-            this.byPrice.TabIndex = 0;
-            this.byPrice.Text = "Сумма цены заказа";
-            this.byPrice.UseVisualStyleBackColor = true;
-            // 
             // byDate
             // 
-            this.byDate.Location = new System.Drawing.Point(7, 69);
+            this.byDate.Location = new System.Drawing.Point(7, 40);
             this.byDate.Name = "byDate";
             this.byDate.Size = new System.Drawing.Size(297, 32);
             this.byDate.TabIndex = 1;
@@ -244,20 +224,10 @@
             this.clear.Text = "Сброс";
             this.clear.UseVisualStyleBackColor = true;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(348, 36);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 23);
-            this.label2.TabIndex = 99;
-            this.label2.Text = "\t↑";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(348, 74);
+            this.label5.Location = new System.Drawing.Point(348, 45);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(27, 23);
@@ -384,6 +354,16 @@
             this.viewOrder.Text = "Просмотреть заказ";
             this.viewOrder.UseVisualStyleBackColor = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 28);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 23);
+            this.label2.TabIndex = 109;
+            this.label2.Text = "Код заказа";
+            // 
             // OrderRecorder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -441,13 +421,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupSearch;
         private System.Windows.Forms.TextBox textSearch;
-        private System.Windows.Forms.ComboBox selectSearch;
         private System.Windows.Forms.GroupBox groupSort;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button clear;
         private System.Windows.Forms.Button byDate;
-        private System.Windows.Forms.Button byPrice;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox staff;
@@ -460,5 +437,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button exportExcel;
         private System.Windows.Forms.Button viewOrder;
+        private System.Windows.Forms.Label label2;
     }
 }

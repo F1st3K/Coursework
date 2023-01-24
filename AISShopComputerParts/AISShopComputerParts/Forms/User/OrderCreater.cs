@@ -8,20 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AISShopComputerParts
+namespace AISShopComputerParts.Forms.User
 {
-    public partial class OrderRecorder : Form
+    public partial class OrderCreater : Form
     {
-        public OrderRecorder()
+        public OrderCreater()
         {
             InitializeComponent();
-        }
-
-        private void back_Click(object sender, EventArgs e)
-        {
-            var form = new AdminPanel();
-            this.Hide();
-            form.Show();
         }
     }
 }

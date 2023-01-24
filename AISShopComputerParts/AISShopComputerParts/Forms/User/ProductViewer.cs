@@ -19,7 +19,7 @@ namespace AISShopComputerParts
 
         private void back_Click(object sender, EventArgs e)
         {
-            var form = new AdminPanel();
+            var form = new ManagerPanel();
             this.Hide();
             form.Show();
         }
