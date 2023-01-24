@@ -10,23 +10,16 @@ using System.Windows.Forms;
 
 namespace AISShopComputerParts
 {
-    public partial class OrderCreater : Form
+    public partial class ViewerOrder : Form
     {
-        public OrderCreater()
+        public ViewerOrder()
         {
             InitializeComponent();
         }
 
-        private void back_Click(object sender, EventArgs e)
+        private void orders_Click(object sender, EventArgs e)
         {
-            var form = new ManagerPanel();
-            this.Hide();
-            form.Show();
-        }
-
-        private void viewOrder_Click(object sender, EventArgs e)
-        {
-            var form = new PreviewerOrder();
+            var form = new OrderRecorder();
             this.Hide();
             form.Show();
         }

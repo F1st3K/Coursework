@@ -53,6 +53,12 @@
     <Compile Include="Forms\Admin\AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Admin\ViewerOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\ViewerOrder.Designer.cs">
+      <DependentUpon>ViewerOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AutorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,12 @@
     <Compile Include="Forms\User\OrderCreater.Designer.cs">
       <DependentUpon>OrderCreater.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\User\PreviewerOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\PreviewerOrder.Designer.cs">
+      <DependentUpon>PreviewerOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\User\ProductViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +124,9 @@
     <EmbeddedResource Include="Forms\Admin\AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\ViewerOrder.resx">
+      <DependentUpon>ViewerOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AutorizationForm.resx">
       <DependentUpon>AutorizationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User\OrderCreater.resx">
       <DependentUpon>OrderCreater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\PreviewerOrder.resx">
+      <DependentUpon>PreviewerOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User\ProductViewer.resx">
       <DependentUpon>ProductViewer.cs</DependentUpon>

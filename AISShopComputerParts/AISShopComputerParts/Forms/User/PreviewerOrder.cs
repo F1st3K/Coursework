@@ -8,13 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AISShopComputerParts.Forms.User
+namespace AISShopComputerParts
 {
     public partial class PreviewerOrder : Form
     {
         public PreviewerOrder()
         {
             InitializeComponent();
+        }
+
+        private void createOrder_Click(object sender, EventArgs e)
+        {
+            var form = new ManagerPanel();
+            this.Hide();
+            form.Show();
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            var form = new OrderCreater();
+            this.Hide();
+            form.Show();
         }
     }
 }

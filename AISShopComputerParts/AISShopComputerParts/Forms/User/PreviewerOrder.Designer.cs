@@ -1,5 +1,5 @@
 ﻿
-namespace AISShopComputerParts.Forms.User
+namespace AISShopComputerParts
 {
     partial class PreviewerOrder
     {
@@ -45,6 +45,7 @@ namespace AISShopComputerParts.Forms.User
             this.idOrder = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.staffFullName = new System.Windows.Forms.Label();
+            this.back = new System.Windows.Forms.Button();
             this.groupCart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceCart)).BeginInit();
@@ -88,6 +89,7 @@ namespace AISShopComputerParts.Forms.User
             this.createOrder.TabIndex = 98;
             this.createOrder.Text = "Занести\r\n";
             this.createOrder.UseVisualStyleBackColor = true;
+            this.createOrder.Click += new System.EventHandler(this.createOrder_Click);
             // 
             // cheque
             // 
@@ -206,12 +208,23 @@ namespace AISShopComputerParts.Forms.User
             this.staffFullName.TabIndex = 106;
             this.staffFullName.Text = "-";
             // 
+            // back
+            // 
+            this.back.Location = new System.Drawing.Point(6, 660);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(242, 39);
+            this.back.TabIndex = 107;
+            this.back.Text = "венуться в оформление";
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
+            // 
             // PreviewerOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 711);
             this.ControlBox = false;
+            this.Controls.Add(this.back);
             this.Controls.Add(this.staffFullName);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -259,5 +272,6 @@ namespace AISShopComputerParts.Forms.User
         private System.Windows.Forms.NumericUpDown idOrder;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label staffFullName;
+        private System.Windows.Forms.Button back;
     }
 }

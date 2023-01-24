@@ -353,6 +353,7 @@
             this.viewOrder.TabIndex = 108;
             this.viewOrder.Text = "Просмотреть заказ";
             this.viewOrder.UseVisualStyleBackColor = false;
+            this.viewOrder.Click += new System.EventHandler(this.viewOrder_Click);
             // 
             // label2
             // 

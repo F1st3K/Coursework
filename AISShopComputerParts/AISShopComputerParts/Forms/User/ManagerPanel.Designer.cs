@@ -39,7 +39,6 @@ namespace AISShopComputerParts
             this.viewSales = new System.Windows.Forms.Button();
             this.createSale = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.picture = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
@@ -105,7 +104,7 @@ namespace AISShopComputerParts
             // 
             // createSale
             // 
-            this.createSale.Location = new System.Drawing.Point(14, 282);
+            this.createSale.Location = new System.Drawing.Point(14, 222);
             this.createSale.Name = "createSale";
             this.createSale.Size = new System.Drawing.Size(322, 54);
             this.createSale.TabIndex = 16;
@@ -123,15 +122,6 @@ namespace AISShopComputerParts
             this.label1.Size = new System.Drawing.Size(396, 23);
             this.label1.TabIndex = 16;
             this.label1.Text = "Учет продажи компьютерных комплектующих";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(14, 222);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(322, 54);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Оформить приход комплектующих";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // picture
             // 
@@ -151,7 +141,6 @@ namespace AISShopComputerParts
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 505);
             this.ControlBox = false;
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.createSale);
             this.Controls.Add(this.viewSales);
@@ -193,6 +182,5 @@ namespace AISShopComputerParts
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
     }
 }
