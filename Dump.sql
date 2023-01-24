@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `dbshopcomputerparts` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `dbshopcomputerparts`;
--- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: dbshopcomputerparts
 -- ------------------------------------------------------
--- Server version	5.6.37
+-- Server version	5.7.38
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,31 +16,6 @@ USE `dbshopcomputerparts`;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `Staffs`
---
-
-DROP TABLE IF EXISTS `Staffs`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `Staffs` (
-  `idStaff` int(11) NOT NULL AUTO_INCREMENT,
-  `fullName` varchar(45) NOT NULL,
-  `post` varchar(45) NOT NULL,
-  `phoneNumber` varchar(11) NOT NULL,
-  PRIMARY KEY (`idStaff`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Staffs`
---
-
-LOCK TABLES `Staffs` WRITE;
-/*!40000 ALTER TABLE `Staffs` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Staffs` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `categories`
@@ -102,10 +77,13 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products` (
-  `idProduct` int(11) NOT NULL AUTO_INCREMENT,
+  `idProduct` int(11) NOT NULL,
   `name` varchar(45) NOT NULL,
   `characteristic` varchar(1000) NOT NULL,
   `idCategory` int(11) NOT NULL,
+  `linkPhoto` varchar(45) DEFAULT NULL,
+  `count` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
   PRIMARY KEY (`idProduct`),
   UNIQUE KEY `idProduct_UNIQUE` (`idProduct`),
   UNIQUE KEY `idCategory_UNIQUE` (`idCategory`),
@@ -120,6 +98,31 @@ CREATE TABLE `products` (
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `staffs`
+--
+
+DROP TABLE IF EXISTS `staffs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `staffs` (
+  `idStaff` int(11) NOT NULL AUTO_INCREMENT,
+  `fullName` varchar(45) NOT NULL,
+  `post` varchar(45) NOT NULL,
+  `phoneNumber` varchar(11) NOT NULL,
+  PRIMARY KEY (`idStaff`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `staffs`
+--
+
+LOCK TABLES `staffs` WRITE;
+/*!40000 ALTER TABLE `staffs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `staffs` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -139,7 +142,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `idUser_UNIQUE` (`idUser`),
   UNIQUE KEY `login_UNIQUE` (`login`),
   KEY `idStaff_idx` (`idStaff`),
-  CONSTRAINT `idStaff` FOREIGN KEY (`idStaff`) REFERENCES `Staffs` (`idStaff`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `idStaff` FOREIGN KEY (`idStaff`) REFERENCES `staffs` (`idStaff`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -161,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-23 13:43:27
+-- Dump completed on 2023-01-24 23:43:57
