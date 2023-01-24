@@ -71,6 +71,12 @@
     <Compile Include="ManagerPanel.Designer.cs">
       <DependentUpon>ManagerPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderRecorder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderRecorder.Designer.cs">
+      <DependentUpon>OrderRecorder.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerPanel.resx">
       <DependentUpon>ManagerPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderRecorder.resx">
+      <DependentUpon>OrderRecorder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductEditor.resx">
       <DependentUpon>ProductEditor.cs</DependentUpon>
