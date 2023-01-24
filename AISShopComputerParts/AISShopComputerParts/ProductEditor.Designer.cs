@@ -50,6 +50,8 @@ namespace AISShopComputerParts
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.selectPicture = new System.Windows.Forms.Button();
+            this.countStrings = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.id)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.count)).BeginInit();
@@ -59,7 +61,7 @@ namespace AISShopComputerParts
             // 
             // back
             // 
-            this.back.Location = new System.Drawing.Point(759, 508);
+            this.back.Location = new System.Drawing.Point(859, 658);
             this.back.Name = "back";
             this.back.Size = new System.Drawing.Size(113, 41);
             this.back.TabIndex = 57;
@@ -69,7 +71,7 @@ namespace AISShopComputerParts
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(324, 508);
+            this.delete.Location = new System.Drawing.Point(324, 658);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(124, 41);
             this.delete.TabIndex = 56;
@@ -78,7 +80,7 @@ namespace AISShopComputerParts
             // 
             // edit
             // 
-            this.edit.Location = new System.Drawing.Point(145, 508);
+            this.edit.Location = new System.Drawing.Point(145, 658);
             this.edit.Name = "edit";
             this.edit.Size = new System.Drawing.Size(173, 41);
             this.edit.TabIndex = 55;
@@ -87,7 +89,7 @@ namespace AISShopComputerParts
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(15, 508);
+            this.add.Location = new System.Drawing.Point(15, 658);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(124, 41);
             this.add.TabIndex = 54;
@@ -99,11 +101,11 @@ namespace AISShopComputerParts
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(15, 274);
+            this.dataGridView.Location = new System.Drawing.Point(6, 274);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(857, 228);
+            this.dataGridView.Size = new System.Drawing.Size(966, 355);
             this.dataGridView.TabIndex = 54;
             // 
             // charactirystics
@@ -111,14 +113,14 @@ namespace AISShopComputerParts
             this.charactirystics.Location = new System.Drawing.Point(145, 87);
             this.charactirystics.Multiline = true;
             this.charactirystics.Name = "charactirystics";
-            this.charactirystics.Size = new System.Drawing.Size(509, 144);
+            this.charactirystics.Size = new System.Drawing.Size(610, 144);
             this.charactirystics.TabIndex = 50;
             // 
             // name
             // 
             this.name.Location = new System.Drawing.Point(145, 50);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(727, 31);
+            this.name.Size = new System.Drawing.Size(610, 31);
             this.name.TabIndex = 48;
             // 
             // label1
@@ -156,7 +158,7 @@ namespace AISShopComputerParts
             this.category.FormattingEnabled = true;
             this.category.Location = new System.Drawing.Point(377, 12);
             this.category.Name = "category";
-            this.category.Size = new System.Drawing.Size(495, 31);
+            this.category.Size = new System.Drawing.Size(378, 31);
             this.category.TabIndex = 49;
             // 
             // id
@@ -213,7 +215,7 @@ namespace AISShopComputerParts
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(599, 239);
+            this.label7.Location = new System.Drawing.Point(757, 16);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 23);
@@ -222,27 +224,49 @@ namespace AISShopComputerParts
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(661, 87);
+            this.pictureBox.Location = new System.Drawing.Point(761, 50);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(211, 144);
+            this.pictureBox.Size = new System.Drawing.Size(211, 181);
             this.pictureBox.TabIndex = 62;
             this.pictureBox.TabStop = false;
             // 
             // selectPicture
             // 
-            this.selectPicture.Location = new System.Drawing.Point(661, 237);
+            this.selectPicture.Location = new System.Drawing.Point(820, 13);
             this.selectPicture.Name = "selectPicture";
-            this.selectPicture.Size = new System.Drawing.Size(211, 31);
+            this.selectPicture.Size = new System.Drawing.Size(152, 31);
             this.selectPicture.TabIndex = 53;
             this.selectPicture.Text = "Выбрать фото";
             this.selectPicture.UseVisualStyleBackColor = true;
+            // 
+            // countStrings
+            // 
+            this.countStrings.AutoSize = true;
+            this.countStrings.Location = new System.Drawing.Point(206, 632);
+            this.countStrings.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.countStrings.Name = "countStrings";
+            this.countStrings.Size = new System.Drawing.Size(20, 23);
+            this.countStrings.TabIndex = 90;
+            this.countStrings.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(11, 632);
+            this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(185, 23);
+            this.label8.TabIndex = 89;
+            this.label8.Text = "Колличество записей:";
             // 
             // ProductEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(984, 711);
             this.ControlBox = false;
+            this.Controls.Add(this.countStrings);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.selectPicture);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.label7);
@@ -303,5 +327,7 @@ namespace AISShopComputerParts
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Button selectPicture;
+        private System.Windows.Forms.Label countStrings;
+        private System.Windows.Forms.Label label8;
     }
 }
