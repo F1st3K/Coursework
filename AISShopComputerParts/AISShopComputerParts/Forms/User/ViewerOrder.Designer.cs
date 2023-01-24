@@ -29,6 +29,7 @@ namespace AISShopComputerParts
         /// </summary>
         private void InitializeComponent()
         {
+            this.staff = new System.Windows.Forms.ComboBox();
             this.orders = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -36,7 +37,6 @@ namespace AISShopComputerParts
             this.dateTimeOrder = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.cheque = new System.Windows.Forms.Button();
-            this.cancel = new System.Windows.Forms.Button();
             this.groupCart = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.totalPrice = new System.Windows.Forms.NumericUpDown();
@@ -45,7 +45,6 @@ namespace AISShopComputerParts
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.priceCart = new System.Windows.Forms.NumericUpDown();
-            this.staff = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.idOrder)).BeginInit();
             this.groupCart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.totalPrice)).BeginInit();
@@ -54,12 +53,21 @@ namespace AISShopComputerParts
             ((System.ComponentModel.ISupportInitialize)(this.priceCart)).BeginInit();
             this.SuspendLayout();
             // 
+            // staff
+            // 
+            this.staff.Enabled = false;
+            this.staff.FormattingEnabled = true;
+            this.staff.Location = new System.Drawing.Point(550, 546);
+            this.staff.Name = "staff";
+            this.staff.Size = new System.Drawing.Size(416, 31);
+            this.staff.TabIndex = 128;
+            // 
             // orders
             // 
             this.orders.Location = new System.Drawing.Point(6, 660);
             this.orders.Name = "orders";
             this.orders.Size = new System.Drawing.Size(242, 39);
-            this.orders.TabIndex = 117;
+            this.orders.TabIndex = 127;
             this.orders.Text = "Вернуться в заказы";
             this.orders.UseVisualStyleBackColor = true;
             this.orders.Click += new System.EventHandler(this.orders_Click);
@@ -71,7 +79,7 @@ namespace AISShopComputerParts
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 23);
-            this.label6.TabIndex = 115;
+            this.label6.TabIndex = 126;
             this.label6.Text = "Сотрудник:";
             // 
             // label5
@@ -81,7 +89,7 @@ namespace AISShopComputerParts
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 23);
-            this.label5.TabIndex = 112;
+            this.label5.TabIndex = 123;
             this.label5.Text = "Код заказа:";
             // 
             // idOrder
@@ -90,7 +98,7 @@ namespace AISShopComputerParts
             this.idOrder.Location = new System.Drawing.Point(172, 545);
             this.idOrder.Name = "idOrder";
             this.idOrder.Size = new System.Drawing.Size(200, 31);
-            this.idOrder.TabIndex = 111;
+            this.idOrder.TabIndex = 122;
             // 
             // dateTimeOrder
             // 
@@ -98,7 +106,7 @@ namespace AISShopComputerParts
             this.dateTimeOrder.Location = new System.Drawing.Point(172, 591);
             this.dateTimeOrder.Name = "dateTimeOrder";
             this.dateTimeOrder.Size = new System.Drawing.Size(200, 31);
-            this.dateTimeOrder.TabIndex = 114;
+            this.dateTimeOrder.TabIndex = 125;
             // 
             // label4
             // 
@@ -107,26 +115,17 @@ namespace AISShopComputerParts
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(162, 23);
-            this.label4.TabIndex = 113;
+            this.label4.TabIndex = 124;
             this.label4.Text = "Дата время заказа:";
             // 
             // cheque
             // 
-            this.cheque.Location = new System.Drawing.Point(467, 660);
+            this.cheque.Location = new System.Drawing.Point(786, 660);
             this.cheque.Name = "cheque";
             this.cheque.Size = new System.Drawing.Size(180, 39);
-            this.cheque.TabIndex = 109;
+            this.cheque.TabIndex = 120;
             this.cheque.Text = "Оформить чек";
             this.cheque.UseVisualStyleBackColor = true;
-            // 
-            // cancel
-            // 
-            this.cancel.Location = new System.Drawing.Point(692, 660);
-            this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(274, 39);
-            this.cancel.TabIndex = 110;
-            this.cancel.Text = "Отменить";
-            this.cancel.UseVisualStyleBackColor = true;
             // 
             // groupCart
             // 
@@ -140,7 +139,7 @@ namespace AISShopComputerParts
             this.groupCart.Location = new System.Drawing.Point(12, 12);
             this.groupCart.Name = "groupCart";
             this.groupCart.Size = new System.Drawing.Size(960, 527);
-            this.groupCart.TabIndex = 108;
+            this.groupCart.TabIndex = 119;
             this.groupCart.TabStop = false;
             this.groupCart.Text = "Корзина";
             // 
@@ -209,14 +208,6 @@ namespace AISShopComputerParts
             this.priceCart.Size = new System.Drawing.Size(153, 31);
             this.priceCart.TabIndex = 96;
             // 
-            // staff
-            // 
-            this.staff.FormattingEnabled = true;
-            this.staff.Location = new System.Drawing.Point(550, 546);
-            this.staff.Name = "staff";
-            this.staff.Size = new System.Drawing.Size(416, 31);
-            this.staff.TabIndex = 118;
-            // 
             // ViewerOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -231,7 +222,6 @@ namespace AISShopComputerParts
             this.Controls.Add(this.dateTimeOrder);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cheque);
-            this.Controls.Add(this.cancel);
             this.Controls.Add(this.groupCart);
             this.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -239,7 +229,6 @@ namespace AISShopComputerParts
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ViewerOrder";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewerOrder";
             ((System.ComponentModel.ISupportInitialize)(this.idOrder)).EndInit();
             this.groupCart.ResumeLayout(false);
@@ -255,6 +244,7 @@ namespace AISShopComputerParts
 
         #endregion
 
+        private System.Windows.Forms.ComboBox staff;
         private System.Windows.Forms.Button orders;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -262,7 +252,6 @@ namespace AISShopComputerParts
         private System.Windows.Forms.DateTimePicker dateTimeOrder;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button cheque;
-        private System.Windows.Forms.Button cancel;
         private System.Windows.Forms.GroupBox groupCart;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown totalPrice;
@@ -271,6 +260,5 @@ namespace AISShopComputerParts
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.NumericUpDown priceCart;
-        private System.Windows.Forms.ComboBox staff;
     }
 }

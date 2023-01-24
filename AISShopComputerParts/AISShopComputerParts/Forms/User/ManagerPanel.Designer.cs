@@ -101,6 +101,7 @@ namespace AISShopComputerParts
             this.viewSales.TabIndex = 14;
             this.viewSales.Text = "Просмотр продаж";
             this.viewSales.UseVisualStyleBackColor = true;
+            this.viewSales.Click += new System.EventHandler(this.viewSales_Click);
             // 
             // createSale
             // 

@@ -29,5 +29,12 @@ namespace AISShopComputerParts
             this.Hide();
             form.Show();
         }
+
+        private void viewSales_Click(object sender, System.EventArgs e)
+        {
+            var form = new OrderList();
+            this.Hide();
+            form.Show();
+        }
     }
 }

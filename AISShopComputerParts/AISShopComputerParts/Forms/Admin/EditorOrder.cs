@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AISShopComputerParts
 {
-    public partial class ViewerOrder : Form
+    public partial class EditorOrder : Form
     {
-        public ViewerOrder()
+        public EditorOrder()
         {
             InitializeComponent();
         }
