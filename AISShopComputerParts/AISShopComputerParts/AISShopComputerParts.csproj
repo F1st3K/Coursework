@@ -47,81 +47,81 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminPanel.cs">
+    <Compile Include="View\Admin\AdminPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminPanel.Designer.cs">
+    <Compile Include="View\Admin\AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="AutorizationForm.cs">
+    <Compile Include="View\AutorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AutorizationForm.Designer.cs">
+    <Compile Include="View\AutorizationForm.Designer.cs">
       <DependentUpon>AutorizationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CategoryEditor.cs">
+    <Compile Include="View\Admin\CategoryEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CategoryEditor.Designer.cs">
+    <Compile Include="View\Admin\CategoryEditor.Designer.cs">
       <DependentUpon>CategoryEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerPanel.cs">
+    <Compile Include="View\User\ManagerPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerPanel.Designer.cs">
+    <Compile Include="View\User\ManagerPanel.Designer.cs">
       <DependentUpon>ManagerPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrderRecorder.cs">
+    <Compile Include="View\Admin\OrderRecorder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrderRecorder.Designer.cs">
+    <Compile Include="View\Admin\OrderRecorder.Designer.cs">
       <DependentUpon>OrderRecorder.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductEditor.cs">
+    <Compile Include="View\Admin\ProductEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductEditor.Designer.cs">
+    <Compile Include="View\Admin\ProductEditor.Designer.cs">
       <DependentUpon>ProductEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductViewer.cs">
+    <Compile Include="View\User\ProductViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductViewer.Designer.cs">
+    <Compile Include="View\User\ProductViewer.Designer.cs">
       <DependentUpon>ProductViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StaffEditor.cs">
+    <Compile Include="View\Admin\StaffEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StaffEditor.Designer.cs">
+    <Compile Include="View\Admin\StaffEditor.Designer.cs">
       <DependentUpon>StaffEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserEditor.cs">
+    <Compile Include="View\Admin\UserEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserEditor.Designer.cs">
+    <Compile Include="View\Admin\UserEditor.Designer.cs">
       <DependentUpon>UserEditor.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminPanel.resx">
+    <EmbeddedResource Include="View\Admin\AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AutorizationForm.resx">
+    <EmbeddedResource Include="View\AutorizationForm.resx">
       <DependentUpon>AutorizationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CategoryEditor.resx">
+    <EmbeddedResource Include="View\Admin\CategoryEditor.resx">
       <DependentUpon>CategoryEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerPanel.resx">
+    <EmbeddedResource Include="View\User\ManagerPanel.resx">
       <DependentUpon>ManagerPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrderRecorder.resx">
+    <EmbeddedResource Include="View\Admin\OrderRecorder.resx">
       <DependentUpon>OrderRecorder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductEditor.resx">
+    <EmbeddedResource Include="View\Admin\ProductEditor.resx">
       <DependentUpon>ProductEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductViewer.resx">
+    <EmbeddedResource Include="View\User\ProductViewer.resx">
       <DependentUpon>ProductViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -133,10 +133,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="StaffEditor.resx">
+    <EmbeddedResource Include="View\Admin\StaffEditor.resx">
       <DependentUpon>StaffEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserEditor.resx">
+    <EmbeddedResource Include="View\Admin\UserEditor.resx">
       <DependentUpon>UserEditor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
