@@ -42,6 +42,36 @@ LOCK TABLES `categories` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `compositions_orders`
+--
+
+DROP TABLE IF EXISTS `compositions_orders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `compositions_orders` (
+  `idCompositionsOrders` int(11) NOT NULL AUTO_INCREMENT,
+  `idOrder` int(11) NOT NULL,
+  `idProduct` int(11) NOT NULL,
+  `countProduct` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idCompositionsOrders`),
+  UNIQUE KEY `idCompositionsOrders_UNIQUE` (`idCompositionsOrders`),
+  KEY `idOrder_idx` (`idOrder`),
+  KEY `idProduct_idx` (`idProduct`),
+  CONSTRAINT `idOrder` FOREIGN KEY (`idOrder`) REFERENCES `orders` (`idOrder`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `idProduct` FOREIGN KEY (`idProduct`) REFERENCES `products` (`idProduct`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `compositions_orders`
+--
+
+LOCK TABLES `compositions_orders` WRITE;
+/*!40000 ALTER TABLE `compositions_orders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `compositions_orders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `orders`
 --
 
@@ -50,9 +80,10 @@ DROP TABLE IF EXISTS `orders`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `orders` (
   `idOrder` int(11) NOT NULL AUTO_INCREMENT,
-  `idsProducts` varchar(45) NOT NULL,
-  `countProducts` int(11) NOT NULL,
+  `date` datetime NOT NULL,
   `user` int(11) NOT NULL,
+  `countProducts` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
   PRIMARY KEY (`idOrder`),
   UNIQUE KEY `idOrder_UNIQUE` (`idOrder`),
   KEY `user_idx` (`user`),
@@ -164,4 +195,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-24 23:43:57
+-- Dump completed on 2023-02-01 14:14:49
