@@ -47,5 +47,20 @@ namespace AISShopComputerParts.BusinessLogic
             }
             return table;
         }
+
+        public void QueryExecute(string query)
+        {
+            try
+            {
+                _dbConection.Open();
+                MySqlCommand command = new MySqlCommand(query, _dbConection);
+                command.ExecuteNonQuery();
+                _dbConection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + query, "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+        }
     }
 }
