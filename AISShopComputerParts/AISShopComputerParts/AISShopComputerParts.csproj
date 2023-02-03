@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\..\..\Program Files\MySQL\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -133,6 +136,7 @@
     <Compile Include="Forms\Admin\UserEditor.Designer.cs">
       <DependentUpon>UserEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\MySqlExecutor.cs" />
     <EmbeddedResource Include="Forms\Admin\AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AISShopComputerParts.Logic;
+using System;
 using System.Windows.Forms;
 
 namespace AISShopComputerParts
@@ -14,6 +12,8 @@ namespace AISShopComputerParts
         [STAThread]
         static void Main()
         {
+            var SQLExecuter = new MySqlExecutor("host='localhost';database='carwah_shema';uid='root';pwd='';charset=utf8;");
+            MySqlExecutor.GetInstance();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AutorizationForm());

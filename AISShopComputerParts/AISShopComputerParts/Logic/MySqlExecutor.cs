@@ -3,31 +3,26 @@ using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace AISShopComputerParts.BusinessLogic
+namespace AISShopComputerParts.Logic
 {
-    internal class SqlQueryExecutor
+    internal sealed class MySqlExecutor
     {
-        private static SqlQueryExecutor instance;
+        private static MySqlExecutor _instance;
         private string _connectionString;
         private  MySqlConnection _dbConection;
 
-        public SqlQueryExecutor()
+        public MySqlExecutor(string connectionString)
         {
-            _connectionString = "host='localhost';database='carwah_shema';uid='root';pwd='';charset=utf8;";
-            _dbConection = new MySqlConnection(_connectionString);
-        }
-
-        public SqlQueryExecutor(string connectionString)
-        {
+            _instance = this;
             _connectionString = connectionString;
             _dbConection = new MySqlConnection(_connectionString);
         }
 
-        public static SqlQueryExecutor GetInstance()
+        public static MySqlExecutor GetInstance()
         {
-            if (instance == null)
-                instance = new SqlQueryExecutor();
-            return instance;
+            if (_instance == null)
+                throw new ArgumentNullException("Instace is null, create him.");
+            return _instance;
         }
 
         public DataTable QueryReturn(string query)
@@ -43,7 +38,8 @@ namespace AISShopComputerParts.BusinessLogic
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\n" + query, "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show(ex.Message + "\n" + query, "Внимание!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             return table;
         }
@@ -59,7 +55,8 @@ namespace AISShopComputerParts.BusinessLogic
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\n" + query, "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show(ex.Message + "\n" + query, "Внимание!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
     }
