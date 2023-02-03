@@ -1,4 +1,4 @@
-﻿using AISShopComputerParts.Logic;
+﻿using AISShopComputerParts.Logic.MySql;
 using System;
 using System.Windows.Forms;
 
@@ -12,8 +12,10 @@ namespace AISShopComputerParts
         [STAThread]
         static void Main()
         {
-            var SQLExecuter = new MySqlExecutor("host='localhost';database='carwah_shema';uid='root';pwd='';charset=utf8;");
+            var sqlExecuter = new MySqlExecutor("host='localhost';database='carwah_shema';uid='root';pwd='';charset=utf8;");
             MySqlExecutor.GetInstance();
+            MySqlQueryGenerator.GetInstance();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AutorizationForm());

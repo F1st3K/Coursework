@@ -3,7 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace AISShopComputerParts.Logic
+namespace AISShopComputerParts.Logic.MySql
 {
     internal sealed class MySqlExecutor
     {
