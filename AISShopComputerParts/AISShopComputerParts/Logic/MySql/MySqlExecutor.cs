@@ -25,6 +25,19 @@ namespace AISShopComputerParts.Logic.MySql
             return _instance;
         }
 
+        public void TestConnection()
+        {
+            try
+            {
+                _dbConection.Open();
+                _dbConection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+        }
+
         public DataTable QueryReturn(string query)
         {
             DataTable table = new DataTable();

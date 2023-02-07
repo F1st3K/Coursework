@@ -12,9 +12,9 @@ namespace AISShopComputerParts
         [STAThread]
         static void Main()
         {
-            var sqlExecuter = new MySqlExecutor("host='localhost';database='carwah_shema';uid='root';pwd='';charset=utf8;");
-            MySqlExecutor.GetInstance();
-            MySqlQueryGenerator.GetInstance();
+            var sqlExecuter = new MySqlExecutor("host='localhost';database='dbshopcomputerparts';uid='root';pwd='';charset=utf8;");
+            MySqlExecutor.GetInstance().TestConnection();
+
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
