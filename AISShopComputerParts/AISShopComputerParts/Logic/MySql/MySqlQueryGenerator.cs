@@ -53,5 +53,8 @@ namespace AISShopComputerParts.Logic.MySql
             return "UPDATE " + tableName + " SET " + values + " WHERE " + condition + ";";
         }
 
+        public static string DeleteFrom(string table, string condition)
+            => "DELETE FROM " + table + " WHERE " + condition + ";";
+
     }
 }
