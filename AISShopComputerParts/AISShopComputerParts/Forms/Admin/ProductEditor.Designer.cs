@@ -67,7 +67,7 @@ namespace AISShopComputerParts
             this.back.TabIndex = 57;
             this.back.Text = "В меню";
             this.back.UseVisualStyleBackColor = false;
-            this.back.Click += new System.EventHandler(this.back_Click);
+            this.back.Click += new System.EventHandler(this.BackClick);
             // 
             // delete
             // 
@@ -77,6 +77,7 @@ namespace AISShopComputerParts
             this.delete.TabIndex = 56;
             this.delete.Text = "Удалить";
             this.delete.UseVisualStyleBackColor = false;
+            this.delete.Click += new System.EventHandler(this.DeleteClick);
             // 
             // edit
             // 
@@ -86,6 +87,7 @@ namespace AISShopComputerParts
             this.edit.TabIndex = 55;
             this.edit.Text = "Редактировать";
             this.edit.UseVisualStyleBackColor = false;
+            this.edit.Click += new System.EventHandler(this.EditClick);
             // 
             // add
             // 
@@ -95,6 +97,7 @@ namespace AISShopComputerParts
             this.add.TabIndex = 54;
             this.add.Text = "Добавить";
             this.add.UseVisualStyleBackColor = false;
+            this.add.Click += new System.EventHandler(this.AddClick);
             // 
             // dataGridView
             // 
@@ -107,6 +110,7 @@ namespace AISShopComputerParts
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(966, 355);
             this.dataGridView.TabIndex = 54;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewCellClick);
             // 
             // charactirystics
             // 
@@ -115,6 +119,7 @@ namespace AISShopComputerParts
             this.charactirystics.Name = "charactirystics";
             this.charactirystics.Size = new System.Drawing.Size(610, 144);
             this.charactirystics.TabIndex = 50;
+            this.charactirystics.TextChanged += new System.EventHandler(this.ChangedInputField);
             // 
             // name
             // 
@@ -122,6 +127,7 @@ namespace AISShopComputerParts
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(610, 31);
             this.name.TabIndex = 48;
+            this.name.TextChanged += new System.EventHandler(this.ChangedInputField);
             // 
             // label1
             // 
@@ -160,6 +166,7 @@ namespace AISShopComputerParts
             this.category.Name = "category";
             this.category.Size = new System.Drawing.Size(378, 31);
             this.category.TabIndex = 49;
+            this.category.TextChanged += new System.EventHandler(this.ChangedInputField);
             // 
             // id
             // 
@@ -167,6 +174,7 @@ namespace AISShopComputerParts
             this.id.Name = "id";
             this.id.Size = new System.Drawing.Size(120, 31);
             this.id.TabIndex = 47;
+            this.id.ValueChanged += new System.EventHandler(this.ChangedInputField);
             // 
             // label4
             // 
@@ -204,6 +212,7 @@ namespace AISShopComputerParts
             this.count.Name = "count";
             this.count.Size = new System.Drawing.Size(120, 31);
             this.count.TabIndex = 51;
+            this.count.ValueChanged += new System.EventHandler(this.ChangedInputField);
             // 
             // price
             // 
@@ -211,6 +220,7 @@ namespace AISShopComputerParts
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(120, 31);
             this.price.TabIndex = 52;
+            this.price.ValueChanged += new System.EventHandler(this.ChangedInputField);
             // 
             // label7
             // 
@@ -238,6 +248,7 @@ namespace AISShopComputerParts
             this.selectPicture.TabIndex = 53;
             this.selectPicture.Text = "Выбрать фото";
             this.selectPicture.UseVisualStyleBackColor = true;
+            this.selectPicture.Click += new System.EventHandler(this.ChangedInputField);
             // 
             // countStrings
             // 
@@ -295,6 +306,7 @@ namespace AISShopComputerParts
             this.Name = "ProductEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Редактор комплектующих";
+            this.Load += new System.EventHandler(this.OnLoad);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.id)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.count)).EndInit();

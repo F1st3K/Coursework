@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AISShopComputerParts.Logic.MySql;
+using System;
 using System.Windows.Forms;
 
 namespace AISShopComputerParts
@@ -10,24 +11,30 @@ namespace AISShopComputerParts
             InitializeComponent();
         }
 
-        private void Back_Click(object sender, EventArgs e)
+        private void BackClick(object sender, EventArgs e)
         {
             var form = new AdminPanel();
             this.Hide();
             form.Show();
         }
 
-        private void CategoryEditor_Load(object sender, EventArgs e)
+        private void OnLoad(object sender, EventArgs e)
         {
             //update gridview
         }
 
-        private void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridViewCellClick(object sender, DataGridViewCellEventArgs e)
         {
             //add change delete disable
             //update current row
-            //bold row
-            //delete enable
+                //if (current row == row)
+                //    current row = null
+                //    clear input fields
+                //else
+                //    bold row
+                //    current row = row
+                //    insert input fields
+                //    delete enable
         }
 
         private void ChangedInputField(object sender, EventArgs e)
@@ -39,7 +46,7 @@ namespace AISShopComputerParts
             //    add enable
         }
 
-        private void Add_Click(object sender, EventArgs e)
+        private void AddClick(object sender, EventArgs e)
         {
             //check fields
             //quary insert into
@@ -48,7 +55,7 @@ namespace AISShopComputerParts
             //add change delete disable
         }
 
-        private void Edit_Click(object sender, EventArgs e)
+        private void EditClick(object sender, EventArgs e)
         {
             //check fields
             //quary update set
@@ -57,7 +64,7 @@ namespace AISShopComputerParts
             //add change delete disable
         }
 
-        private void Delete_Click(object sender, EventArgs e)
+        private void DeleteClick(object sender, EventArgs e)
         {
             //quary delete
             //update gridview
