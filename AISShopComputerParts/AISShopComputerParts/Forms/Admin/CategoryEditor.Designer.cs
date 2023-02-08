@@ -47,7 +47,7 @@ namespace AISShopComputerParts
             this.back.TabIndex = 53;
             this.back.Text = "В меню";
             this.back.UseVisualStyleBackColor = false;
-            this.back.Click += new System.EventHandler(this.back_Click);
+            this.back.Click += new System.EventHandler(this.Back_Click);
             // 
             // delete
             // 
@@ -57,6 +57,7 @@ namespace AISShopComputerParts
             this.delete.TabIndex = 52;
             this.delete.Text = "Удалить";
             this.delete.UseVisualStyleBackColor = false;
+            this.delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // edit
             // 
@@ -66,6 +67,7 @@ namespace AISShopComputerParts
             this.edit.TabIndex = 51;
             this.edit.Text = "Редактировать";
             this.edit.UseVisualStyleBackColor = false;
+            this.edit.Click += new System.EventHandler(this.Edit_Click);
             // 
             // add
             // 
@@ -75,6 +77,7 @@ namespace AISShopComputerParts
             this.add.TabIndex = 50;
             this.add.Text = "Добавить";
             this.add.UseVisualStyleBackColor = false;
+            this.add.Click += new System.EventHandler(this.Add_Click);
             // 
             // dataGridView
             // 
@@ -87,6 +90,7 @@ namespace AISShopComputerParts
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(563, 252);
             this.dataGridView.TabIndex = 49;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellClick);
             // 
             // categoryName
             // 
@@ -94,6 +98,7 @@ namespace AISShopComputerParts
             this.categoryName.Name = "categoryName";
             this.categoryName.Size = new System.Drawing.Size(466, 31);
             this.categoryName.TabIndex = 47;
+            this.categoryName.TextChanged += new System.EventHandler(this.ChangedInputField);
             // 
             // label3
             // 
@@ -126,6 +131,7 @@ namespace AISShopComputerParts
             this.Name = "CategoryEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Редактор категорий";
+            this.Load += new System.EventHandler(this.CategoryEditor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
