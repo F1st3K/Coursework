@@ -6,6 +6,8 @@ namespace AISShopComputerParts
 {
     public partial class CategoryEditor : Form
     {
+        private DataGridViewRow _currentRow;
+
         public CategoryEditor()
         {
             InitializeComponent();
@@ -20,56 +22,103 @@ namespace AISShopComputerParts
 
         private void OnLoad(object sender, EventArgs e)
         {
-            //update gridview
+            UpdateDataGridView();
+            DisableMode();
+        }
+
+        private void UpdateDataGridView()
+        {
+            string query = MySqlQueryGenerator.Select("*", "categories", true.ToString());
+            dataGridView.DataSource = MySqlExecutor.GetInstance().QueryReturn(query);
+        }
+
+        private void EnableAddMode()
+        {
+            add.Enabled = true;
+            edit.Enabled = false;
+            delete.Enabled = false;
+        }
+
+        private void EnableEditMode()
+        {
+            add.Enabled = false;
+            edit.Enabled = true;
+            delete.Enabled = false;
+        }
+
+        private void EnableDeleteMode()
+        {
+            add.Enabled = false;
+            edit.Enabled = false;
+            delete.Enabled = true;
+        }
+
+        private void DisableMode()
+        {
+            _currentRow = null;
+            add.Enabled = false;
+            edit.Enabled = false;
+            delete.Enabled = false;
+            categoryName.Text = String.Empty;
+        }
+
+        private void FillInputFields()
+        {
+            categoryName.Text = _currentRow.Cells[1].Value.ToString();
         }
 
         private void DataGridViewCellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //add change delete disable
-            //update current row
-                //if (current row == row)
-                //    current row = null
-                //    clear input fields
-                //else
-                //    bold row
-                //    current row = row
-                //    insert input fields
-                //    delete enable
+            if (_currentRow == dataGridView.Rows[e.RowIndex])
+            {
+                DisableMode();
+            }
+            else
+            {
+                _currentRow = dataGridView.Rows[e.RowIndex];
+                _currentRow.Selected = true;
+                FillInputFields();
+                EnableDeleteMode();
+            }
+
         }
 
         private void ChangedInputField(object sender, EventArgs e)
         {
-            //add change delete disable
-            //if (currentRow != null)
-            //    change enable
-            //else
-            //    add enable
+            if (_currentRow != null)
+                EnableEditMode();
+            else EnableAddMode();
         }
 
         private void AddClick(object sender, EventArgs e)
         {
             //check fields
-            //quary insert into
-            //update gridview
-            //clear input fields
-            //add change delete disable
+            string quary = MySqlQueryGenerator.InsertInto("categories",
+                "DEFAULT", 
+                $"'{categoryName.Text}'");
+            MySqlExecutor.GetInstance().QueryExecute(quary);
+            UpdateDataGridView();
+            DisableMode();
         }
 
         private void EditClick(object sender, EventArgs e)
         {
             //check fields
-            //quary update set
-            //update gridview
-            //clear input fields
-            //add change delete disable
+            string quary = MySqlQueryGenerator.UpdateSet("categories",
+                $"idCategory = {_currentRow.Cells[0].Value.ToString()}",
+                $"name = '{categoryName.Text}'");
+            MySqlExecutor.GetInstance().QueryExecute(quary);
+            UpdateDataGridView();
+            DisableMode();
         }
 
         private void DeleteClick(object sender, EventArgs e)
         {
-            //quary delete
-            //update gridview
-            //clear input fields
-            //add change delete disable
+            string quary = MySqlQueryGenerator.DeleteFrom("categories",
+                $"idCategory = {_currentRow.Cells[0].Value.ToString()}");
+            MySqlExecutor.GetInstance().QueryExecute(quary);
+            UpdateDataGridView();
+            DisableMode();
         }
     }
 }
