@@ -1,4 +1,5 @@
 ﻿using AISShopComputerParts.Logic.MySql;
+using MySqlX.XDevAPI.Relational;
 using System;
 using System.Windows.Forms;
 
@@ -67,6 +68,11 @@ namespace AISShopComputerParts
             categoryName.Text = _currentRow.Cells[1].Value.ToString();
         }
 
+        private bool FieldsIsPass()
+        {
+            return categoryName.Text == String.Empty;
+        }
+
         private void DataGridViewCellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (_currentRow == dataGridView.Rows[e.RowIndex])
@@ -92,7 +98,11 @@ namespace AISShopComputerParts
 
         private void AddClick(object sender, EventArgs e)
         {
-            //check fields
+            if (FieldsIsPass())
+            {
+                MessageBox.Show("Не все поля заполнены верно!!!");
+                return;
+            }
             string quary = MySqlQueryGenerator.InsertInto("categories",
                 "DEFAULT", 
                 $"'{categoryName.Text}'");
@@ -103,7 +113,11 @@ namespace AISShopComputerParts
 
         private void EditClick(object sender, EventArgs e)
         {
-            //check fields
+            if (FieldsIsPass())
+            {
+                MessageBox.Show("Не все поля заполнены верно!!!");
+                return;
+            }
             string quary = MySqlQueryGenerator.UpdateSet("categories",
                 $"idCategory = {_currentRow.Cells[0].Value.ToString()}",
                 $"name = '{categoryName.Text}'");
@@ -114,6 +128,10 @@ namespace AISShopComputerParts
 
         private void DeleteClick(object sender, EventArgs e)
         {
+            DialogResult dialogResult = MessageBox.Show("Вы действительно хотите удалить текущую запись?", 
+                "Внимание! УДАЛЕНИЕ!", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+            if (dialogResult == DialogResult.No)
+                return;
             string quary = MySqlQueryGenerator.DeleteFrom("categories",
                 $"idCategory = {_currentRow.Cells[0].Value.ToString()}");
             MySqlExecutor.GetInstance().QueryExecute(quary);
