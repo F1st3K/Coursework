@@ -56,6 +56,7 @@ namespace AISShopComputerParts
 
         private void DisableMode()
         {
+            dataGridView.ClearSelection();
             _currentRow = null;
             add.Enabled = false;
             edit.Enabled = false;
@@ -75,6 +76,8 @@ namespace AISShopComputerParts
 
         private void DataGridViewCellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1)
+                return;
             if (_currentRow == dataGridView.Rows[e.RowIndex])
             {
                 DisableMode();

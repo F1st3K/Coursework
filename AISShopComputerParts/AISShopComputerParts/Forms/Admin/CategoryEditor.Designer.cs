@@ -83,11 +83,18 @@ namespace AISShopComputerParts
             // 
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AllowUserToResizeColumns = false;
+            this.dataGridView.AllowUserToResizeRows = false;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(15, 49);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersVisible = false;
+            this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
+            this.dataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(563, 252);
             this.dataGridView.TabIndex = 49;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewCellClick);
@@ -96,7 +103,7 @@ namespace AISShopComputerParts
             // 
             this.categoryName.Location = new System.Drawing.Point(112, 12);
             this.categoryName.Name = "categoryName";
-            this.categoryName.Size = new System.Drawing.Size(466, 31);
+            this.categoryName.Size = new System.Drawing.Size(466, 36);
             this.categoryName.TabIndex = 47;
             this.categoryName.TextChanged += new System.EventHandler(this.ChangedInputField);
             // 
@@ -106,13 +113,13 @@ namespace AISShopComputerParts
             this.label3.Location = new System.Drawing.Point(11, 15);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 23);
+            this.label3.Size = new System.Drawing.Size(123, 29);
             this.label3.TabIndex = 44;
             this.label3.Text = "Категория:";
             // 
             // CategoryEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 361);
             this.ControlBox = false;
