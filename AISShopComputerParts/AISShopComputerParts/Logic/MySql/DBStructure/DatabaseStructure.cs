@@ -54,36 +54,4 @@
         }
 
     }
-
-    internal class Table
-    {
-        public readonly string Name;
-        public readonly Column[] Columns;
-
-        public Table(string name, params Column[] columns)
-        {
-            Name = name;
-            Columns = columns;
-        }
-    }
-
-    internal class Column
-    {
-        public readonly string Name;
-        public readonly ColumnType Type;
-
-        public Column(string name, ColumnType type)
-        {
-            Name = name;
-            Type = type;
-        }
-    }
-
-    enum ColumnType
-    {
-        Number,
-        String,
-        DataTime,
-    }
-
 }

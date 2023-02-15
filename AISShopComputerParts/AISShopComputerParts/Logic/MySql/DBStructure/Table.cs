@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AISShopComputerParts.Logic.MySql.DBStructure
+﻿namespace AISShopComputerParts.Logic.MySql.DBStructure
 {
     internal class Table
     {
+        public readonly string Name;
+        public readonly Column[] Columns;
+
+        public Table(string name, params Column[] columns)
+        {
+            Name = name;
+            Columns = columns;
+        }
     }
 }
