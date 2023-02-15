@@ -113,7 +113,7 @@ namespace AISShopComputerParts
             }
             string quary = MySqlQueryGenerator.InsertInto("categories",
                 "DEFAULT", 
-                $"'{categoryName.Text}'");
+                "'"+categoryName.Text+"'");
             MySqlExecutor.GetInstance().QueryExecute(quary);
             UpdateDataGridView();
             DisableMode();
@@ -127,8 +127,8 @@ namespace AISShopComputerParts
                 return;
             }
             string quary = MySqlQueryGenerator.UpdateSet("categories",
-                $"idCategory = {_currentRow.Cells[0].Value.ToString()}",
-                $"name = '{categoryName.Text}'");
+                "idCategory = "+_currentRow.Cells[0].Value.ToString(),
+                "name = '"+categoryName.Text+"'");
             MySqlExecutor.GetInstance().QueryExecute(quary);
             UpdateDataGridView();
             DisableMode();
@@ -141,7 +141,7 @@ namespace AISShopComputerParts
             if (dialogResult == DialogResult.No)
                 return;
             string quary = MySqlQueryGenerator.DeleteFrom("categories",
-                $"idCategory = {_currentRow.Cells[0].Value.ToString()}");
+                "idCategory = "+_currentRow.Cells[0].Value.ToString());
             MySqlExecutor.GetInstance().QueryExecute(quary);
             UpdateDataGridView();
             DisableMode();

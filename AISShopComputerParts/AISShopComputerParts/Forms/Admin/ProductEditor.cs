@@ -161,13 +161,13 @@ namespace AISShopComputerParts
                 return;
             }
             string quary = MySqlQueryGenerator.InsertInto("products",
-                $"{id.Value}",
-                $"'{name.Text}'",
-                $"'{charactirystics.Text}'",
-                $"{idsCategories[category.SelectedIndex]}",
-                $"'{id.Value}'",
-                $"{count.Value}",
-                $"{price.Value}");
+                id.Value.ToString(),
+                "'"+name.Text+"'",
+                "'"+charactirystics.Text+"'",
+                idsCategories[category.SelectedIndex],
+                "'"+id.Value+"'",
+                count.Value.ToString(),
+                price.Value.ToString());
             MySqlExecutor.GetInstance().QueryExecute(quary);
             UpdateDataGridView();
             DisableMode();
@@ -181,12 +181,12 @@ namespace AISShopComputerParts
                 return;
             }
             string quary = MySqlQueryGenerator.UpdateSet("categories",
-                $"idProduct = {_currentRow.Cells[0].Value.ToString()}",
-                $"name = '{name.Text}'",
-                $"charactirystics = '{charactirystics.Text}'",
-                $"idCategory = {idsCategories[category.SelectedIndex]}",
-                $"count = {count.Value}",
-                $"price = {price.Value}");
+                "idProduct = "+_currentRow.Cells[0].Value.ToString(),
+                "name = '"+name.Text+"'",
+                "charactirystics = '"+charactirystics.Text+"'",
+                "idCategory = "+idsCategories[category.SelectedIndex],
+                "count = " +count.Value.ToString(),
+                "price = "+price.Value.ToString());
             MySqlExecutor.GetInstance().QueryExecute(quary);
             UpdateDataGridView();
             DisableMode();
@@ -199,7 +199,7 @@ namespace AISShopComputerParts
             if (dialogResult == DialogResult.No)
                 return;
             string quary = MySqlQueryGenerator.DeleteFrom("products",
-                $"idProduct = {_currentRow.Cells[0].Value.ToString()}");
+                "idProduct = "+_currentRow.Cells[0].Value.ToString());
             MySqlExecutor.GetInstance().QueryExecute(quary);
             UpdateDataGridView();
             DisableMode();
