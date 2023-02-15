@@ -61,6 +61,11 @@ namespace AISShopComputerParts
             add.Enabled = false;
             edit.Enabled = false;
             delete.Enabled = false;
+            ClearInputField();
+        }
+
+        private void ClearInputField()
+        {
             categoryName.Text = String.Empty;
         }
 
