@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AISShopComputerParts.Logic.MySql
+﻿namespace AISShopComputerParts.Logic.MySql
 {
     internal static class MySqlQueryGenerator
     {
