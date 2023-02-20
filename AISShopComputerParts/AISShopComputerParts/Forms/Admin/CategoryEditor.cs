@@ -1,4 +1,5 @@
 ﻿using AISShopComputerParts.Logic.MySql;
+using AISShopComputerParts.Logic.MySql.DBStructure;
 using MySqlX.XDevAPI.Relational;
 using System;
 using System.Windows.Forms;
@@ -29,8 +30,7 @@ namespace AISShopComputerParts
 
         private void UpdateDataGridView()
         {
-            string query = MySqlQueryGenerator.Select("*", "categories", true.ToString());
-            dataGridView.DataSource = MySqlExecutor.GetInstance().QueryReturn(query);
+            dataGridView.DataSource = MySqlAdapter.ReturnAll(DatabaseStructure.Categories);
         }
 
         private void EnableAddMode()
@@ -111,10 +111,7 @@ namespace AISShopComputerParts
                 MessageBox.Show("Не все поля заполнены верно!!!");
                 return;
             }
-            string quary = MySqlQueryGenerator.InsertInto("categories",
-                "DEFAULT", 
-                "'"+categoryName.Text+"'");
-            MySqlExecutor.GetInstance().QueryExecute(quary);
+            MySqlAdapter.AddAllString(DatabaseStructure.Categories, MySqlAdapter.DEFAULT, categoryName.Text);
             UpdateDataGridView();
             DisableMode();
         }
@@ -126,10 +123,8 @@ namespace AISShopComputerParts
                 MessageBox.Show("Не все поля заполнены верно!!!");
                 return;
             }
-            string quary = MySqlQueryGenerator.UpdateSet("categories",
-                "idCategory = "+_currentRow.Cells[0].Value.ToString(),
-                "name = '"+categoryName.Text+"'");
-            MySqlExecutor.GetInstance().QueryExecute(quary);
+            MySqlAdapter.EditStringByID(DatabaseStructure.Categories,
+                _currentRow.Cells[0].Value.ToString(), categoryName.Text);
             UpdateDataGridView();
             DisableMode();
         }
@@ -140,9 +135,8 @@ namespace AISShopComputerParts
                 "Внимание! УДАЛЕНИЕ!", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
             if (dialogResult == DialogResult.No)
                 return;
-            string quary = MySqlQueryGenerator.DeleteFrom("categories",
-                "idCategory = "+_currentRow.Cells[0].Value.ToString());
-            MySqlExecutor.GetInstance().QueryExecute(quary);
+            MySqlAdapter.DeleteStringByID(DatabaseStructure.Categories,
+                Convert.ToInt32(_currentRow.Cells[0].Value));
             UpdateDataGridView();
             DisableMode();
         }

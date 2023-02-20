@@ -2,6 +2,7 @@
 {
     public enum ColumnType
     {
+        Id,
         Int,
         Varchar,
         DateTime,

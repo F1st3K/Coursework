@@ -8,10 +8,10 @@ namespace AISShopComputerParts.Logic.MySql
 {
     static public class MySqlAdapter
     {
-        const string ALL = "*";
-        const string TRUE = "true";
-        const string DEFAULT = "DEFAULT";
-        const string EQUALS = " = ";
+        public const string ALL = "*";
+        public const string TRUE = "true";
+        public const string DEFAULT = "DEFAULT";
+        public const string EQUALS = " = ";
 
         static public DataTable ReturnAll(Table table)
         {
@@ -26,12 +26,19 @@ namespace AISShopComputerParts.Logic.MySql
             MySqlExecutor.GetInstance().QueryExecute(quary);
         }
 
-        static public void EditStringByID(Table table, int id, params string[] values)
+        static public void EditStringByID(Table table, params string[] values)
         {
             values = ConvertToColumnTypes(table, values);
             values = ConvertToСolumnEquality(table, values);
             string quary = MySqlQueryGenerator.UpdateSet(
-                table.Name, table.Columns[0] + EQUALS + id.ToString(), values);
+                table.Name, values[0], values);
+            MySqlExecutor.GetInstance().QueryExecute(quary);
+        }
+
+        static public void DeleteStringByID(Table table, int id)
+        {
+            string quary = MySqlQueryGenerator.DeleteFrom(
+                table.Name, table.Columns[0].Name + EQUALS + id.ToString());
             MySqlExecutor.GetInstance().QueryExecute(quary);
         }
 
@@ -39,7 +46,7 @@ namespace AISShopComputerParts.Logic.MySql
         {
             for (int i = 0; i < table.Columns.Length; i++)
             {
-                values[i] = table.Columns[i].ToString() + EQUALS + values[i];
+                values[i] = table.Columns[i].Name.ToString() + EQUALS + values[i];
             }
             return values;
         }
@@ -52,6 +59,9 @@ namespace AISShopComputerParts.Logic.MySql
             {
                 switch (table.Columns[i].Type)
                 {
+                    case ColumnType.Id:
+                        values[i] = values[i] == DEFAULT ? DEFAULT : Convert.ToInt32(values[i]).ToString();
+                        break;
                     case ColumnType.Int:
                         values[i] = Convert.ToInt32(values[i]).ToString();
                         break;
