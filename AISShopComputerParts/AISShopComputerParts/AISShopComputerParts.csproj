@@ -122,6 +122,11 @@
     <Compile Include="Forms\User\OrderViewer.Designer.cs">
       <DependentUpon>OrderViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\MySql\DBStructure\Column.cs" />
+    <Compile Include="Logic\MySql\DBStructure\ColumnType.cs" />
+    <Compile Include="Logic\MySql\DBStructure\DatabaseStructure.cs" />
+    <Compile Include="Logic\MySql\DBStructure\Table.cs" />
+    <Compile Include="Logic\MySql\MySqlAdapter.cs" />
     <Compile Include="Logic\MySql\MySqlQueryGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

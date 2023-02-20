@@ -1,4 +1,6 @@
-﻿namespace AISShopComputerParts.Logic.MySql.DBStructure
+﻿using System.Collections;
+
+namespace AISShopComputerParts.Logic.MySql.DBStructure
 {
     static internal class DatabaseStructure
     {
@@ -52,6 +54,5 @@
                 new Column("status", ColumnType.String),
                 new Column("idStaff", ColumnType.Number));
         }
-
     }
 }

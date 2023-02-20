@@ -1,6 +1,6 @@
 ﻿namespace AISShopComputerParts.Logic.MySql.DBStructure
 {
-    enum ColumnType
+    public enum ColumnType
     {
         Number,
         String,

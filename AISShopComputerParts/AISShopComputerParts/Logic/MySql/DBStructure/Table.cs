@@ -1,6 +1,6 @@
 ﻿namespace AISShopComputerParts.Logic.MySql.DBStructure
 {
-    internal class Table
+    public class Table
     {
         public readonly string Name;
         public readonly Column[] Columns;
