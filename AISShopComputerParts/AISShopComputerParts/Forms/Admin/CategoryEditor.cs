@@ -1,6 +1,5 @@
 ﻿using AISShopComputerParts.Logic.MySql;
 using AISShopComputerParts.Logic.MySql.DBStructure;
-using MySqlX.XDevAPI.Relational;
 using System;
 using System.Windows.Forms;
 
@@ -111,7 +110,8 @@ namespace AISShopComputerParts
                 MessageBox.Show("Не все поля заполнены верно!!!");
                 return;
             }
-            MySqlAdapter.AddAllString(DatabaseStructure.Categories, MySqlAdapter.DEFAULT, categoryName.Text);
+            MySqlAdapter.AddAllString(DatabaseStructure.Categories,
+                MySqlAdapter.DEFAULT, categoryName.Text);
             UpdateDataGridView();
             DisableMode();
         }

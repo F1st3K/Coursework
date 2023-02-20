@@ -1,6 +1,7 @@
-﻿using AISShopComputerParts.Logic.MySql;
+﻿using AISShopComputerParts.Logic;
+using AISShopComputerParts.Logic.MySql;
+using AISShopComputerParts.Logic.MySql.DBStructure;
 using System;
-using System.Data;
 using System.Windows.Forms;
 
 namespace AISShopComputerParts
@@ -31,30 +32,17 @@ namespace AISShopComputerParts
 
         private void UpdateDataGridView()
         {
-            string query = MySqlQueryGenerator.Select("*", "products", true.ToString());
-            dataGridView.DataSource = MySqlExecutor.GetInstance().QueryReturn(query);
+            dataGridView.DataSource = MySqlAdapter.ReturnAll(DatabaseStructure.Products);
         }
 
         private void AddSelectionComboboxes()
         {
             category.DropDownStyle = ComboBoxStyle.DropDownList;
-            category.DataSource = ParseData("*", "categories");
-            idsCategories = ParseData("idCategory", "categories");
+            category.DataSource = TableParser.ParseData(MySqlAdapter.ReturnAll(DatabaseStructure.Categories));
+            idsCategories = TableParser.ParseData(
+                MySqlAdapter.ReturnColumn(DatabaseStructure.Categories,
+                DatabaseStructure.Categories.Columns[0]));
             category.SelectedIndex = category.Items.Count - 1;
-        }
-
-        private string[] ParseData(string column, string tableName)
-        {
-            string condition = "true";
-            string query = MySqlQueryGenerator.Select(column, tableName, condition);
-            DataTable dt = MySqlExecutor.GetInstance().QueryReturn(query);
-            string[] data = new string[dt.Rows.Count];
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                for (int j = 0; j < dt.Columns.Count; j++)
-                    data[i] += dt.Rows[i][j].ToString() + " \t ";
-            }
-            return data;
         }
 
         private void EnableAddMode()
@@ -160,15 +148,14 @@ namespace AISShopComputerParts
                 MessageBox.Show("Не все поля заполнены верно!!!");
                 return;
             }
-            string quary = MySqlQueryGenerator.InsertInto("products",
+            MySqlAdapter.AddAllString(DatabaseStructure.Products,
                 id.Value.ToString(),
-                "'"+name.Text+"'",
-                "'"+charactirystics.Text+"'",
+                name.Text,
+                charactirystics.Text,
                 idsCategories[category.SelectedIndex],
-                "'"+id.Value+"'",
+                "photo",
                 count.Value.ToString(),
                 price.Value.ToString());
-            MySqlExecutor.GetInstance().QueryExecute(quary);
             UpdateDataGridView();
             DisableMode();
         }
@@ -180,14 +167,14 @@ namespace AISShopComputerParts
                 MessageBox.Show("Не все поля заполнены верно!!!");
                 return;
             }
-            string quary = MySqlQueryGenerator.UpdateSet("categories",
-                "idProduct = "+_currentRow.Cells[0].Value.ToString(),
-                "name = '"+name.Text+"'",
-                "charactirystics = '"+charactirystics.Text+"'",
-                "idCategory = "+idsCategories[category.SelectedIndex],
-                "count = " +count.Value.ToString(),
-                "price = "+price.Value.ToString());
-            MySqlExecutor.GetInstance().QueryExecute(quary);
+            MySqlAdapter.EditStringByID(DatabaseStructure.Products,
+                _currentRow.Cells[0].Value.ToString(),
+                name.Text,
+                charactirystics.Text,
+                idsCategories[category.SelectedIndex],
+                "photo",
+                count.Value.ToString(),
+                price.Value.ToString());
             UpdateDataGridView();
             DisableMode();
         }
@@ -198,9 +185,8 @@ namespace AISShopComputerParts
                 "Внимание! УДАЛЕНИЕ!", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
             if (dialogResult == DialogResult.No)
                 return;
-            string quary = MySqlQueryGenerator.DeleteFrom("products",
-                "idProduct = "+_currentRow.Cells[0].Value.ToString());
-            MySqlExecutor.GetInstance().QueryExecute(quary);
+            MySqlAdapter.DeleteStringByID(DatabaseStructure.Products,
+                Convert.ToInt32(_currentRow.Cells[0].Value));
             UpdateDataGridView();
             DisableMode();
         }
