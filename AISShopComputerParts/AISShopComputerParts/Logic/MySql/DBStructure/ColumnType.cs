@@ -2,8 +2,8 @@
 {
     public enum ColumnType
     {
-        Number,
-        String,
-        DataTime,
+        Int,
+        Varchar,
+        DateTime,
     }
 }

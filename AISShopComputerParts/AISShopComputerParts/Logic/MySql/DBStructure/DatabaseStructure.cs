@@ -16,43 +16,43 @@ namespace AISShopComputerParts.Logic.MySql.DBStructure
         {
             Categories = new Table(
                 "categories",
-                new Column("idCategory", ColumnType.Number),
-                new Column("name", ColumnType.String));
+                new Column("idCategory", ColumnType.Int),
+                new Column("name", ColumnType.Varchar));
             CompositionsOrders = new Table(
                 "compositions_orders",
-                new Column("idCompositionsOrders", ColumnType.Number),
-                new Column("idOrder", ColumnType.Number),
-                new Column("idProduct", ColumnType.Number),
-                new Column("countProduct", ColumnType.Number));
+                new Column("idCompositionsOrders", ColumnType.Int),
+                new Column("idOrder", ColumnType.Int),
+                new Column("idProduct", ColumnType.Int),
+                new Column("countProduct", ColumnType.Int));
             Orders = new Table(
                 "orders",
-                new Column("idOrder", ColumnType.Number),
-                new Column("date", ColumnType.DataTime),
-                new Column("idUser", ColumnType.Number),
-                new Column("countPosition", ColumnType.Number),
-                new Column("price", ColumnType.Number));
+                new Column("idOrder", ColumnType.Int),
+                new Column("date", ColumnType.DateTime),
+                new Column("idUser", ColumnType.Int),
+                new Column("countPosition", ColumnType.Int),
+                new Column("price", ColumnType.Int));
             Products = new Table(
                 "products",
-                new Column("idProduct", ColumnType.Number),
-                new Column("name", ColumnType.String),
-                new Column("characteristic", ColumnType.String),
-                new Column("idCategory", ColumnType.Number),
-                new Column("linkPhoto", ColumnType.String),
-                new Column("count", ColumnType.Number),
-                new Column("price", ColumnType.Number));
+                new Column("idProduct", ColumnType.Int),
+                new Column("name", ColumnType.Varchar),
+                new Column("characteristic", ColumnType.Varchar),
+                new Column("idCategory", ColumnType.Int),
+                new Column("linkPhoto", ColumnType.Varchar),
+                new Column("count", ColumnType.Int),
+                new Column("price", ColumnType.Int));
             Staffs = new Table(
                 "staffs",
-                new Column("idStaff", ColumnType.Number),
-                new Column("fullName", ColumnType.String),
-                new Column("post", ColumnType.String),
-                new Column("phoneNumber", ColumnType.String));
+                new Column("idStaff", ColumnType.Int),
+                new Column("fullName", ColumnType.Varchar),
+                new Column("post", ColumnType.Varchar),
+                new Column("phoneNumber", ColumnType.Varchar));
             Users = new Table(
                 "users",
-                new Column("idUser", ColumnType.Number),
-                new Column("login", ColumnType.String),
-                new Column("password", ColumnType.String),
-                new Column("status", ColumnType.String),
-                new Column("idStaff", ColumnType.Number));
+                new Column("idUser", ColumnType.Int),
+                new Column("login", ColumnType.Varchar),
+                new Column("password", ColumnType.Varchar),
+                new Column("status", ColumnType.Varchar),
+                new Column("idStaff", ColumnType.Int));
         }
     }
 }
