@@ -38,10 +38,10 @@ namespace AISShopComputerParts
         private void AddSelectionComboboxes()
         {
             category.DropDownStyle = ComboBoxStyle.DropDownList;
-            category.DataSource = TableParser.ParseData(MySqlAdapter.ReturnAll(DatabaseStructure.Categories));
+            category.DataSource = TableParser.ParseData(MySqlAdapter.ReturnAll(DatabaseStructure.Categories), "\t");
             idsCategories = TableParser.ParseData(
-                MySqlAdapter.ReturnColumn(DatabaseStructure.Categories,
-                DatabaseStructure.Categories.Columns[0]));
+                MySqlAdapter.ReturnColumn(DatabaseStructure.Categories, DatabaseStructure.Categories.Columns[0]),
+                String.Empty);
             category.SelectedIndex = category.Items.Count - 1;
         }
 
@@ -92,7 +92,6 @@ namespace AISShopComputerParts
             name.Text = _currentRow.Cells[1].Value.ToString();
             charactirystics.Text = _currentRow.Cells[2].Value.ToString();
             category.SelectedIndex = FindSelectCombobox(_currentRow.Cells[3].Value.ToString(), idsCategories);
-
             count.Value = Convert.ToInt32(_currentRow.Cells[5].Value);
             price.Value = Convert.ToInt32(_currentRow.Cells[6].Value);
         }
@@ -101,7 +100,7 @@ namespace AISShopComputerParts
         {
             for (int i = 0; i < data.Length; i++)
             {
-                if (data[i] == value)
+                if (value.Equals(data[i]))
                     return i;
             }
             return 0;
