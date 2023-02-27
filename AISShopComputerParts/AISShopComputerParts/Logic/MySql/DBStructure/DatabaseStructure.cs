@@ -12,6 +12,9 @@ namespace AISShopComputerParts.Logic.MySql.DBStructure
         static public readonly Table Staffs;
         static public readonly Table Users;
 
+        static public readonly string AdminMode = "admin";
+        static public readonly string UserMode = "user";
+
         static DatabaseStructure()
         {
             Categories = new Table(

@@ -10,11 +10,20 @@ namespace AISShopComputerParts.Logic.MySql
         public const string TRUE = "true";
         public const string DEFAULT = "DEFAULT";
         public const string EQUALS = " = ";
+        public const string AND = " AND ";
+
 
         static public DataTable ReturnAll(Table table)
         {
             string query = MySqlQueryGenerator.Select(ALL, table.Name, TRUE);
             return MySqlExecutor.GetInstance().QueryReturn(query);
+        }
+
+        static public DataRow ReturnEntry(Table table, string condition)
+        {
+            string query = MySqlQueryGenerator.Select(ALL, table.Name, condition);
+            return MySqlExecutor.GetInstance().QueryReturn(query).Rows[0];
+            
         }
 
         static public DataTable ReturnColumn(Table table, Column column)
