@@ -19,10 +19,10 @@ namespace AISShopComputerParts.Logic.MySql
             return MySqlExecutor.GetInstance().QueryReturn(query);
         }
 
-        static public DataRow ReturnEntry(Table table, string condition)
+        static public DataTable ReturnRows(Table table, string condition)
         {
             string query = MySqlQueryGenerator.Select(ALL, table.Name, condition);
-            return MySqlExecutor.GetInstance().QueryReturn(query).Rows[0];
+            return MySqlExecutor.GetInstance().QueryReturn(query);
             
         }
 

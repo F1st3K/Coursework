@@ -10,7 +10,7 @@ namespace AISShopComputerParts
     public partial class AutorizationForm : Form
     {
         private int _countTryPasswd = 8;
-        private int _countTryOutCaptcher => _countTryPasswd - 3;
+        private int _countTryOutCaptcher = 5;
         private int _msFrezze = 5000;
 
         public AutorizationForm()
@@ -26,27 +26,34 @@ namespace AISShopComputerParts
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            DataRow dataRow = MySqlAdapter.ReturnRow(DatabaseStructure.Users,
-                DatabaseStructure.Users.Columns[1] + MySqlAdapter.EQUALS + login.Text + MySqlAdapter.AND +
-                DatabaseStructure.Users.Columns[2] + MySqlAdapter.EQUALS + password.Text);
-            if (dataRow is null)
+
+            DataTable dataTable = MySqlAdapter.ReturnRows(DatabaseStructure.Users,
+                DatabaseStructure.Users.Columns[1].Name + MySqlAdapter.EQUALS + 
+                "\"" + login.Text + "\"" + MySqlAdapter.AND +
+                DatabaseStructure.Users.Columns[2].Name + MySqlAdapter.EQUALS + 
+                "\"" + password.Text + "\"");
+            if (dataTable.Rows.Count <= 0)
             {
                 MessageBox.Show("*неверный логин и/или пароль*", "неудачный вход",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
             }
-            if (dataRow[3].ToString() == DatabaseStructure.AdminMode)
+            else
             {
-                LoginAdmin();
-                return;
+                DataRow dataRow = dataTable.Rows[0];
+                if (dataRow[3].ToString() == DatabaseStructure.AdminMode)
+                {
+                    LoginAdmin();
+                    return;
+                }
+                if (dataRow[3].ToString() == DatabaseStructure.UserMode)
+                {
+                    LoginUser();
+                    return;
+                }
             }
-            if (dataRow[3].ToString() == DatabaseStructure.UserMode)
-            {
-                LoginUser();
-                return;
-            }
-            _countTryPasswd--;
 
+            _countTryPasswd--;
+            _countTryOutCaptcher--;
             if (_countTryPasswd <= 0)
                 Block();
             else if (_countTryOutCaptcher <= 0)
