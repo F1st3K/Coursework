@@ -14,17 +14,17 @@ namespace AISShopComputerParts
             InitializeComponent();
         }
 
-        private void BackClick(object sender, EventArgs e)
-        {
-            var form = new AdminPanel();
-            this.Hide();
-            form.Show();
-        }
-
         private void OnLoad(object sender, EventArgs e)
         {
             UpdateDataGridView();
             DisableMode();
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            var form = new AdminPanel();
+            this.Hide();
+            form.Show();
         }
 
         private void UpdateDataGridView()
@@ -79,8 +79,8 @@ namespace AISShopComputerParts
 
         private bool FieldsIsPass()
         {
-            return fullName.Text == String.Empty &&
-                   post.Text == String.Empty &&
+            return fullName.Text == String.Empty ||
+                   post.Text == String.Empty ||
                    phoneNumber.Text == String.Empty;
         }
 
@@ -145,13 +145,6 @@ namespace AISShopComputerParts
                 Convert.ToInt32(_currentRow.Cells[0].Value));
             UpdateDataGridView();
             DisableMode();
-        }
-
-        private void back_Click(object sender, EventArgs e)
-        {
-            var form = new AdminPanel();
-            this.Hide();
-            form.Show();
         }
     }
 }

@@ -53,7 +53,7 @@ namespace AISShopComputerParts
             this.label3.Location = new System.Drawing.Point(17, 13);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 23);
+            this.label3.Size = new System.Drawing.Size(76, 28);
             this.label3.TabIndex = 17;
             this.label3.Text = "Логин:";
             // 
@@ -63,7 +63,7 @@ namespace AISShopComputerParts
             this.label1.Location = new System.Drawing.Point(6, 57);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 23);
+            this.label1.Size = new System.Drawing.Size(90, 28);
             this.label1.TabIndex = 18;
             this.label1.Text = "Пароль:";
             // 
@@ -73,7 +73,7 @@ namespace AISShopComputerParts
             this.label2.Location = new System.Drawing.Point(337, 13);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 23);
+            this.label2.Size = new System.Drawing.Size(86, 28);
             this.label2.TabIndex = 19;
             this.label2.Text = "Доступ:";
             // 
@@ -83,7 +83,7 @@ namespace AISShopComputerParts
             this.label4.Location = new System.Drawing.Point(308, 57);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 23);
+            this.label4.Size = new System.Drawing.Size(120, 28);
             this.label4.TabIndex = 20;
             this.label4.Text = "Сотрудник:\r\n";
             // 
@@ -91,15 +91,17 @@ namespace AISShopComputerParts
             // 
             this.login.Location = new System.Drawing.Point(106, 10);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(173, 30);
+            this.login.Size = new System.Drawing.Size(173, 36);
             this.login.TabIndex = 21;
+            this.login.TextChanged += new System.EventHandler(this.ChangedInputField);
             // 
             // password
             // 
             this.password.Location = new System.Drawing.Point(106, 54);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(173, 30);
+            this.password.Size = new System.Drawing.Size(173, 36);
             this.password.TabIndex = 22;
+            this.password.TextChanged += new System.EventHandler(this.ChangedInputField);
             // 
             // dataGridView
             // 
@@ -109,9 +111,11 @@ namespace AISShopComputerParts
             this.dataGridView.Location = new System.Drawing.Point(10, 96);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(563, 202);
             this.dataGridView.TabIndex = 25;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewCellClick);
             // 
             // add
             // 
@@ -121,6 +125,7 @@ namespace AISShopComputerParts
             this.add.TabIndex = 26;
             this.add.Text = "Добавить";
             this.add.UseVisualStyleBackColor = false;
+            this.add.Click += new System.EventHandler(this.AddClick);
             // 
             // edit
             // 
@@ -130,6 +135,7 @@ namespace AISShopComputerParts
             this.edit.TabIndex = 27;
             this.edit.Text = "Редактировать";
             this.edit.UseVisualStyleBackColor = false;
+            this.edit.Click += new System.EventHandler(this.EditClick);
             // 
             // delete
             // 
@@ -139,6 +145,7 @@ namespace AISShopComputerParts
             this.delete.TabIndex = 28;
             this.delete.Text = "Удалить";
             this.delete.UseVisualStyleBackColor = false;
+            this.delete.Click += new System.EventHandler(this.DeleteClick);
             // 
             // back
             // 
@@ -148,27 +155,29 @@ namespace AISShopComputerParts
             this.back.TabIndex = 29;
             this.back.Text = "В меню";
             this.back.UseVisualStyleBackColor = false;
-            this.back.Click += new System.EventHandler(this.back_Click);
+            this.back.Click += new System.EventHandler(this.BackClick);
             // 
             // status
             // 
             this.status.FormattingEnabled = true;
             this.status.Location = new System.Drawing.Point(417, 13);
             this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(155, 30);
+            this.status.Size = new System.Drawing.Size(155, 36);
             this.status.TabIndex = 23;
+            this.status.SelectedIndexChanged += new System.EventHandler(this.ChangedInputField);
             // 
             // staff
             // 
             this.staff.FormattingEnabled = true;
             this.staff.Location = new System.Drawing.Point(417, 54);
             this.staff.Name = "staff";
-            this.staff.Size = new System.Drawing.Size(155, 30);
+            this.staff.Size = new System.Drawing.Size(155, 36);
             this.staff.TabIndex = 24;
+            this.staff.SelectedIndexChanged += new System.EventHandler(this.ChangedInputField);
             // 
             // UserEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 361);
             this.ControlBox = false;
@@ -193,6 +202,8 @@ namespace AISShopComputerParts
             this.Name = "UserEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Редактор пользователей";
+            this.Load += new System.EventHandler(this.OnLoad);
+            this.TextChanged += new System.EventHandler(this.ChangedInputField);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
