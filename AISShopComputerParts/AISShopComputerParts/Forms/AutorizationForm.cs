@@ -12,10 +12,22 @@ namespace AISShopComputerParts
         private int _countTryPasswd = 8;
         private int _countTryOutCaptcher = 5;
         private int _msFrezze = 5000;
+        private Timer _frezzeTimer;
 
         public AutorizationForm()
         {
             InitializeComponent();
+            _frezzeTimer = new Timer();
+            _frezzeTimer.Interval = _msFrezze;
+            _frezzeTimer.Tick += FrezzeTimerTick;
+        }
+
+        private void FrezzeTimerTick(object sender, EventArgs e)
+        {
+            CaptcherMode();
+            _countTryPasswd = 5;
+            _frezzeTimer.Enabled = false;
+            _frezzeTimer.Stop();
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -60,8 +72,8 @@ namespace AISShopComputerParts
                 CaptcherMode();
             else
                 NormalMode();
-                
         }
+
         private bool CheckCaptcha()
         {
             return true;
@@ -93,7 +105,8 @@ namespace AISShopComputerParts
 
         private void Block()
         {
-
+            BlockMode();
+            _frezzeTimer.Start();
         }
 
         private void LoginUser()
