@@ -15,7 +15,6 @@ namespace AISShopComputerParts
             var sqlExecuter = new MySqlExecutor("host='localhost';database='dbshopcomputerparts';uid='root';pwd='';charset=utf8;");
             MySqlExecutor.GetInstance().TestConnection();
 
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AutorizationForm());

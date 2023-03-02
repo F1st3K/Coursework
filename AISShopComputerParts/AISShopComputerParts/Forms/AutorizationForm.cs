@@ -1,4 +1,5 @@
-﻿using AISShopComputerParts.Logic.MySql;
+﻿using AISShopComputerParts.Logic.Autorization;
+using AISShopComputerParts.Logic.MySql;
 using AISShopComputerParts.Logic.MySql.DBStructure;
 using System;
 using System.Data;
@@ -43,7 +44,7 @@ namespace AISShopComputerParts
                 DatabaseStructure.Users.Columns[1].Name + MySqlAdapter.EQUALS + 
                 "\"" + login.Text + "\"" + MySqlAdapter.AND +
                 DatabaseStructure.Users.Columns[2].Name + MySqlAdapter.EQUALS + 
-                "\"" + password.Text + "\"");
+                "\"" + new HashPassword(password.Text).Hash + "\"");
             if (dataTable.Rows.Count <= 0)
             {
                 MessageBox.Show("*неверный логин и/или пароль*", "неудачный вход",

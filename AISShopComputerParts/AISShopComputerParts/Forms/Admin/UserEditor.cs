@@ -3,6 +3,7 @@ using AISShopComputerParts.Logic.MySql;
 using AISShopComputerParts.Logic;
 using System;
 using System.Windows.Forms;
+using AISShopComputerParts.Logic.Autorization;
 
 namespace AISShopComputerParts
 {
@@ -148,7 +149,7 @@ namespace AISShopComputerParts
             MySqlAdapter.AddAllString(DatabaseStructure.Users,
                 MySqlAdapter.DEFAULT,
                 login.Text,
-                password.Text,
+                new HashPassword(password.Text).Hash,
                 Statuses[status.SelectedIndex],
                 idsStaffs[staff.SelectedIndex]);
             UpdateDataGridView();
@@ -165,7 +166,7 @@ namespace AISShopComputerParts
             MySqlAdapter.EditStringByID(DatabaseStructure.Users,
                 _currentRow.Cells[0].Value.ToString(),
                 login.Text,
-                password.Text,
+                new HashPassword(password.Text).Hash,
                 Statuses[status.SelectedIndex],
                 idsStaffs[staff.SelectedIndex]);
             UpdateDataGridView();

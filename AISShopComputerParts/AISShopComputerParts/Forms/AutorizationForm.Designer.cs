@@ -48,7 +48,7 @@ namespace AISShopComputerParts
             this.login.Location = new System.Drawing.Point(54, 69);
             this.login.Margin = new System.Windows.Forms.Padding(5);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(226, 30);
+            this.login.Size = new System.Drawing.Size(226, 36);
             this.login.TabIndex = 0;
             // 
             // password
@@ -56,7 +56,8 @@ namespace AISShopComputerParts
             this.password.Location = new System.Drawing.Point(54, 130);
             this.password.Margin = new System.Windows.Forms.Padding(5);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(226, 30);
+            this.password.PasswordChar = '◉';
+            this.password.Size = new System.Drawing.Size(226, 36);
             this.password.TabIndex = 1;
             // 
             // label1
@@ -65,7 +66,7 @@ namespace AISShopComputerParts
             this.label1.Location = new System.Drawing.Point(50, 42);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 23);
+            this.label1.Size = new System.Drawing.Size(70, 28);
             this.label1.TabIndex = 2;
             this.label1.Text = "Логин";
             // 
@@ -75,7 +76,7 @@ namespace AISShopComputerParts
             this.label2.Location = new System.Drawing.Point(53, 103);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 23);
+            this.label2.Size = new System.Drawing.Size(84, 28);
             this.label2.TabIndex = 3;
             this.label2.Text = "Пароль";
             // 
@@ -84,7 +85,7 @@ namespace AISShopComputerParts
             this.textbox.Location = new System.Drawing.Point(3, 126);
             this.textbox.Margin = new System.Windows.Forms.Padding(5);
             this.textbox.Name = "textbox";
-            this.textbox.Size = new System.Drawing.Size(223, 30);
+            this.textbox.Size = new System.Drawing.Size(223, 36);
             this.textbox.TabIndex = 2;
             // 
             // buttonExit
@@ -116,7 +117,7 @@ namespace AISShopComputerParts
             this.label4.Location = new System.Drawing.Point(85, 9);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(167, 33);
+            this.label4.Size = new System.Drawing.Size(211, 41);
             this.label4.TabIndex = 9;
             this.label4.Text = "Авторизация";
             // 
@@ -143,7 +144,7 @@ namespace AISShopComputerParts
             // 
             // AutorizationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 445);
             this.ControlBox = false;
