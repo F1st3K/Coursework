@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 using AISShopComputerParts.Logic;
 using AISShopComputerParts.Logic.MySql;
@@ -11,6 +12,7 @@ namespace AISShopComputerParts
     {
         private DataGridViewRow _currentRow;
         private string[] idsStaffs;
+        private bool SortByDate;
         
         public OrdersRecorder()
         {
@@ -78,6 +80,8 @@ namespace AISShopComputerParts
         
         private void OnSearch(object sender, EventArgs e)
         {
+            if (_currentRow != null)
+                _currentRow.Selected = false;
             _currentRow = SearcherOnDataGridView.ReturnFirst(dataGridView, textSearch.Text);
             if (_currentRow != null)
                 _currentRow.Selected = true;
@@ -85,23 +89,20 @@ namespace AISShopComputerParts
         
         private void OnSort(object sender, EventArgs e)
         {
-            MessageBox.Show("sort");
+            if (SortByDate)
+                dataGridView.Sort(dataGridView.Columns[1], ListSortDirection.Ascending);
+            else
+                dataGridView.Sort(dataGridView.Columns[1], ListSortDirection.Descending);
+            symbolSort.Text = SortByDate ? "↓" : "↑";
+            SortByDate = !SortByDate;
         }
         
-        private int FindSelectCombobox(string value, string[] data)
-        {
-            for (int i = 0; i < data.Length; i++)
-            {
-                if (value.Equals(data[i]))
-                    return i;
-            }
-            return 0;
-        }
-
         private void DataGridViewCellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1)
                 return;
+            if (_currentRow != null)
+                _currentRow.Selected = false;
             _currentRow = dataGridView.Rows[e.RowIndex];
             _currentRow.Selected = true;
         }
@@ -109,6 +110,14 @@ namespace AISShopComputerParts
         private void dataGridView_DataSourceChanged(object sender, EventArgs e)
         {
             countStrings.Text = dataGridView.Rows.Count.ToString();
+            var generalPrice = 0;
+            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            {
+                if (dataGridView.Rows[i].Cells[5].Value.ToString() == "Выполнен")
+                    generalPrice += Convert.ToInt32(dataGridView.Rows[i].Cells[4].Value);
+            }
+
+            allPrice.Text = generalPrice.ToString();
         }
     }
 }

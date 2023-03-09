@@ -42,7 +42,7 @@
             this.groupSearch = new System.Windows.Forms.GroupBox();
             this.textSearch = new System.Windows.Forms.TextBox();
             this.groupSort = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.symbolSort = new System.Windows.Forms.Label();
             this.clear = new System.Windows.Forms.Button();
             this.byDate = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -197,7 +197,7 @@
             // 
             // groupSort
             // 
-            this.groupSort.Controls.Add(this.label5);
+            this.groupSort.Controls.Add(this.symbolSort);
             this.groupSort.Controls.Add(this.clear);
             this.groupSort.Controls.Add(this.byDate);
             this.groupSort.Location = new System.Drawing.Point(555, 469);
@@ -207,15 +207,15 @@
             this.groupSort.TabStop = false;
             this.groupSort.Text = "Сортировка";
             // 
-            // label5
+            // symbolSort
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(348, 45);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 29);
-            this.label5.TabIndex = 101;
-            this.label5.Text = "\t↓";
+            this.symbolSort.AutoSize = true;
+            this.symbolSort.Location = new System.Drawing.Point(348, 45);
+            this.symbolSort.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.symbolSort.Name = "symbolSort";
+            this.symbolSort.Size = new System.Drawing.Size(35, 29);
+            this.symbolSort.TabIndex = 101;
+            this.symbolSort.Text = "\t↓";
             // 
             // clear
             // 
@@ -266,6 +266,7 @@
             this.statusNegative.TabIndex = 110;
             this.statusNegative.Text = "Отменен";
             this.statusNegative.UseVisualStyleBackColor = true;
+            this.statusNegative.Click += new System.EventHandler(this.OnFilter);
             // 
             // statusPositive
             // 
@@ -410,6 +411,8 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label symbolSort;
 
         private System.Windows.Forms.CheckBox statusPositive;
 

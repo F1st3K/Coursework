@@ -6,14 +6,14 @@ namespace AISShopComputerParts.Logic
     {
         public static DataGridViewRow ReturnFirst(DataGridView table, string value)
         {
-            for (int i = 0; i < table.Rows.Count; i++)
+            for (int i = 0; i < table.Columns.Count; i++)
             {
-                for (int j = 0; j < table.Columns.Count; j++)
+                for (int j = 0; j < table.Rows.Count; j++)
                 {
-                    if (table.Rows[i].Cells[j] != null &&
-                        table.Rows[i].Cells[j].ToString().Contains(value))
+                    if (table.Rows[j].Cells[i].Value != null &&
+                        table.Rows[j].Cells[i].Value.ToString().Contains(value))
                     {
-                        return table.Rows[i];
+                        return table.Rows[j];
                     }
                 }
             }
