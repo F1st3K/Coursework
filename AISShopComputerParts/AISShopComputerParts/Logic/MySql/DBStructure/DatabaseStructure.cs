@@ -31,9 +31,10 @@ namespace AISShopComputerParts.Logic.MySql.DBStructure
                 "orders",
                 new Column("idOrder", ColumnType.Id),
                 new Column("date", ColumnType.DateTime),
-                new Column("idUser", ColumnType.Int),
+                new Column("idStaff", ColumnType.Int),
                 new Column("countPosition", ColumnType.Int),
-                new Column("price", ColumnType.Int));
+                new Column("price", ColumnType.Int),
+                new Column("status", ColumnType.Int));
             Products = new Table(
                 "products",
                 new Column("idProduct", ColumnType.Id),

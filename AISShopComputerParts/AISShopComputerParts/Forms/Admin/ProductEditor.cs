@@ -38,7 +38,7 @@ namespace AISShopComputerParts
         private void AddSelectionComboboxes()
         {
             category.DropDownStyle = ComboBoxStyle.DropDownList;
-            category.DataSource = TableParser.ParseData(MySqlAdapter.ReturnAll(DatabaseStructure.Categories), "\t");
+            category.DataSource = TableParser.ParseData(MySqlAdapter.ReturnAll(DatabaseStructure.Categories), " ");
             idsCategories = TableParser.ParseData(
                 MySqlAdapter.ReturnColumn(DatabaseStructure.Categories, DatabaseStructure.Categories.Columns[0]),
                 String.Empty);

@@ -40,7 +40,7 @@ namespace AISShopComputerParts
         private void AddSelectionComboboxes()
         {
             staff.DropDownStyle = ComboBoxStyle.DropDownList;
-            staff.DataSource = TableParser.ParseData(MySqlAdapter.ReturnAll(DatabaseStructure.Staffs), "\t");
+            staff.DataSource = TableParser.ParseData(MySqlAdapter.ReturnAll(DatabaseStructure.Staffs), " ");
             idsStaffs = TableParser.ParseData(
                 MySqlAdapter.ReturnColumn(DatabaseStructure.Staffs, DatabaseStructure.Staffs.Columns[0]),
                 String.Empty);

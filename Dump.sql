@@ -29,7 +29,7 @@ CREATE TABLE `categories` (
   `name` varchar(45) NOT NULL,
   PRIMARY KEY (`idCategory`),
   UNIQUE KEY `idCategory_UNIQUE` (`idCategory`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +38,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (4,'Процессоры'),(9,'Кулеры');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,13 +82,14 @@ DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
   `idOrder` int(11) NOT NULL AUTO_INCREMENT,
   `date` datetime NOT NULL,
-  `user` int(11) NOT NULL,
-  `countProducts` int(11) NOT NULL,
+  `idUser` int(11) NOT NULL,
+  `countPosition` int(11) NOT NULL,
   `price` int(11) NOT NULL,
+  `status` enum('Выполнен','Отменен') NOT NULL,
   PRIMARY KEY (`idOrder`),
   UNIQUE KEY `idOrder_UNIQUE` (`idOrder`),
-  KEY `user_idx` (`user`),
-  CONSTRAINT `user` FOREIGN KEY (`user`) REFERENCES `users` (`idUser`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `user_idx` (`idUser`),
+  CONSTRAINT `user` FOREIGN KEY (`idUser`) REFERENCES `users` (`idUser`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -128,6 +130,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'Рязянь 3','ну пых пых ...',4,'photo',23,99);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -142,9 +145,9 @@ CREATE TABLE `staffs` (
   `idStaff` int(11) NOT NULL AUTO_INCREMENT,
   `fullName` varchar(45) NOT NULL,
   `post` varchar(45) NOT NULL,
-  `phoneNumber` varchar(11) NOT NULL,
+  `phoneNumber` varchar(17) NOT NULL,
   PRIMARY KEY (`idStaff`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -153,6 +156,7 @@ CREATE TABLE `staffs` (
 
 LOCK TABLES `staffs` WRITE;
 /*!40000 ALTER TABLE `staffs` DISABLE KEYS */;
+INSERT INTO `staffs` VALUES (1,'Kostin N.K.','main admin','+7 (888) 999-3344'),(2,'Remizov F.G.','toster','+7 (986) 742-3467'),(3,'Ann S.V.','tostic','+7 (956) 907-6543');
 /*!40000 ALTER TABLE `staffs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -174,7 +178,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `login_UNIQUE` (`login`),
   KEY `idStaff_idx` (`idStaff`),
   CONSTRAINT `idStaff` FOREIGN KEY (`idStaff`) REFERENCES `staffs` (`idStaff`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -183,6 +187,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'admin','8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918','admin',1),(2,'user','04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb','user',2),(3,'anna','4d4f26369171994f3a46776ee2d88494fb9955800a5bb6261c016c4bb9f30b56','user',3);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -195,4 +200,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-01 14:14:49
+-- Dump completed on 2023-03-09 18:59:42
