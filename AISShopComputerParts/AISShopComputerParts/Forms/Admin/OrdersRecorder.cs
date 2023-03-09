@@ -58,7 +58,7 @@ namespace AISShopComputerParts
             idsStaffs = staffs.ToArray();
             staff.SelectedIndex = staff.Items.Count - 1;
         }
-        
+
         private void OnFilter(object sender, EventArgs e)
         {
             string condition = "orders.date >= '"+dateStart.Value.ToString("yyyy-MM-dd HH:mm:ss")+"' AND " +
@@ -78,7 +78,9 @@ namespace AISShopComputerParts
         
         private void OnSearch(object sender, EventArgs e)
         {
-            MessageBox.Show("search");
+            _currentRow = SearcherOnDataGridView.ReturnFirst(dataGridView, textSearch.Text);
+            if (_currentRow != null)
+                _currentRow.Selected = true;
         }
         
         private void OnSort(object sender, EventArgs e)

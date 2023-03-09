@@ -130,6 +130,7 @@
     <Compile Include="Logic\MySql\MySqlAdapter.cs" />
     <Compile Include="Logic\MySql\MySqlQueryGenerator.cs" />
     <Compile Include="Logic\MySql\MySqlTableConverter.cs" />
+    <Compile Include="Logic\SearcherOnDataGridView.cs" />
     <Compile Include="Logic\TableParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

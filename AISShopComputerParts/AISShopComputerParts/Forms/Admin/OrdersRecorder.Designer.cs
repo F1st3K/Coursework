@@ -40,7 +40,6 @@
             this.allPrice = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupSearch = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.textSearch = new System.Windows.Forms.TextBox();
             this.groupSort = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -146,6 +145,7 @@
             this.dataGridView.Size = new System.Drawing.Size(980, 346);
             this.dataGridView.TabIndex = 93;
             this.dataGridView.DataSourceChanged += new System.EventHandler(this.dataGridView_DataSourceChanged);
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewCellClick);
             // 
             // label1
             // 
@@ -179,7 +179,6 @@
             // 
             // groupSearch
             // 
-            this.groupSearch.Controls.Add(this.label2);
             this.groupSearch.Controls.Add(this.textSearch);
             this.groupSearch.Location = new System.Drawing.Point(553, 386);
             this.groupSearch.Name = "groupSearch";
@@ -188,21 +187,11 @@
             this.groupSearch.TabStop = false;
             this.groupSearch.Text = "Поиск";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 28);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 29);
-            this.label2.TabIndex = 109;
-            this.label2.Text = "Код заказа";
-            // 
             // textSearch
             // 
-            this.textSearch.Location = new System.Drawing.Point(112, 25);
+            this.textSearch.Location = new System.Drawing.Point(9, 25);
             this.textSearch.Name = "textSearch";
-            this.textSearch.Size = new System.Drawing.Size(299, 36);
+            this.textSearch.Size = new System.Drawing.Size(402, 36);
             this.textSearch.TabIndex = 1;
             this.textSearch.TextChanged += new System.EventHandler(this.OnSearch);
             // 
@@ -456,6 +445,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button exportExcel;
         private System.Windows.Forms.Button viewOrder;
-        private System.Windows.Forms.Label label2;
     }
 }
