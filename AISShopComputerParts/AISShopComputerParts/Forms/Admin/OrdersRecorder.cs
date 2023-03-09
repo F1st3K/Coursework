@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using AISShopComputerParts.Logic;
 using AISShopComputerParts.Logic.MySql;
@@ -32,8 +33,8 @@ namespace AISShopComputerParts
 
         private void OnLoad(object sender, EventArgs e)
         {
-            UpdateDataGridView();
             AddSelectionComboboxes();
+            UpdateDataGridView();
         }
 
         private void UpdateDataGridView()
@@ -44,12 +45,45 @@ namespace AISShopComputerParts
         private void AddSelectionComboboxes()
         {
             staff.DropDownStyle = ComboBoxStyle.DropDownList;
-            staff.DataSource = TableParser.ParseData(
-                MySqlAdapter.ReturnAll(DatabaseStructure.Staffs), " ");
-            idsStaffs = TableParser.ParseData(
+            var staffs = new List<string>();
+            staffs.AddRange(TableParser.ParseData(
+                MySqlAdapter.ReturnAll(DatabaseStructure.Staffs), " "));
+            staffs.Add("Все");
+            staff.DataSource = staffs.ToArray();
+            staffs.Clear();
+            staffs.AddRange(TableParser.ParseData(
                 MySqlAdapter.ReturnColumn(
-                    DatabaseStructure.Staffs, DatabaseStructure.Staffs.Columns[0]), String.Empty);
+                    DatabaseStructure.Staffs, DatabaseStructure.Staffs.Columns[0]), String.Empty));
+            staffs.Add("Все");
+            idsStaffs = staffs.ToArray();
             staff.SelectedIndex = staff.Items.Count - 1;
+        }
+        
+        private void OnFilter(object sender, EventArgs e)
+        {
+            string condition = "orders.date >= '"+dateStart.Value.ToString("yyyy-MM-dd HH:mm:ss")+"' AND " +
+                               "orders.date <= '"+dateFinish.Value.ToString("yyyy-MM-dd HH:mm:ss")+"'";
+            if (staff.SelectedIndex != staff.Items.Count-1)
+                condition += " AND orders.idStaff = " + idsStaffs[staff.SelectedIndex];
+            if (statusPositive.Checked == false)
+                condition += " AND orders.status != 1";
+            if (statusNegative.Checked == false)
+                condition += " AND orders.status != 2";
+            string query = MySqlQueryGenerator.Select(
+                MySqlAdapter.ALL,
+                DatabaseStructure.Orders.Name,
+                condition);
+            dataGridView.DataSource = MySqlExecutor.GetInstance().QueryReturn(query);
+        }
+        
+        private void OnSearch(object sender, EventArgs e)
+        {
+            MessageBox.Show("search");
+        }
+        
+        private void OnSort(object sender, EventArgs e)
+        {
+            MessageBox.Show("sort");
         }
         
         private int FindSelectCombobox(string value, string[] data)
@@ -68,6 +102,11 @@ namespace AISShopComputerParts
                 return;
             _currentRow = dataGridView.Rows[e.RowIndex];
             _currentRow.Selected = true;
+        }
+
+        private void dataGridView_DataSourceChanged(object sender, EventArgs e)
+        {
+            countStrings.Text = dataGridView.Rows.Count.ToString();
         }
     }
 }

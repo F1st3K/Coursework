@@ -47,10 +47,10 @@
             this.clear = new System.Windows.Forms.Button();
             this.byDate = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.statusNegative = new System.Windows.Forms.CheckBox();
+            this.statusPositive = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.staff = new System.Windows.Forms.ComboBox();
-            this.statusNegative = new System.Windows.Forms.RadioButton();
-            this.statusPositive = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.dateFinish = new System.Windows.Forms.DateTimePicker();
             this.dateStart = new System.Windows.Forms.DateTimePicker();
@@ -145,6 +145,7 @@
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(980, 346);
             this.dataGridView.TabIndex = 93;
+            this.dataGridView.DataSourceChanged += new System.EventHandler(this.dataGridView_DataSourceChanged);
             // 
             // label1
             // 
@@ -203,6 +204,7 @@
             this.textSearch.Name = "textSearch";
             this.textSearch.Size = new System.Drawing.Size(299, 36);
             this.textSearch.TabIndex = 1;
+            this.textSearch.TextChanged += new System.EventHandler(this.OnSearch);
             // 
             // groupSort
             // 
@@ -234,6 +236,7 @@
             this.clear.TabIndex = 2;
             this.clear.Text = "Сброс";
             this.clear.UseVisualStyleBackColor = true;
+            this.clear.Click += new System.EventHandler(this.OnLoad);
             // 
             // byDate
             // 
@@ -243,13 +246,14 @@
             this.byDate.TabIndex = 1;
             this.byDate.Text = "Дата заказа";
             this.byDate.UseVisualStyleBackColor = true;
+            this.byDate.Click += new System.EventHandler(this.OnSort);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.staff);
             this.groupBox1.Controls.Add(this.statusNegative);
             this.groupBox1.Controls.Add(this.statusPositive);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.staff);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.dateFinish);
             this.groupBox1.Controls.Add(this.dateStart);
@@ -261,6 +265,30 @@
             this.groupBox1.TabIndex = 106;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Фильтрация";
+            this.groupBox1.TextChanged += new System.EventHandler(this.OnFilter);
+            // 
+            // statusNegative
+            // 
+            this.statusNegative.Checked = true;
+            this.statusNegative.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.statusNegative.Location = new System.Drawing.Point(319, 93);
+            this.statusNegative.Name = "statusNegative";
+            this.statusNegative.Size = new System.Drawing.Size(173, 39);
+            this.statusNegative.TabIndex = 110;
+            this.statusNegative.Text = "Отменен";
+            this.statusNegative.UseVisualStyleBackColor = true;
+            // 
+            // statusPositive
+            // 
+            this.statusPositive.Checked = true;
+            this.statusPositive.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.statusPositive.Location = new System.Drawing.Point(319, 42);
+            this.statusPositive.Name = "statusPositive";
+            this.statusPositive.Size = new System.Drawing.Size(182, 30);
+            this.statusPositive.TabIndex = 109;
+            this.statusPositive.Text = "Выполнен";
+            this.statusPositive.UseVisualStyleBackColor = true;
+            this.statusPositive.Click += new System.EventHandler(this.OnFilter);
             // 
             // label9
             // 
@@ -279,28 +307,7 @@
             this.staff.Name = "staff";
             this.staff.Size = new System.Drawing.Size(518, 37);
             this.staff.TabIndex = 2;
-            // 
-            // statusNegative
-            // 
-            this.statusNegative.AutoSize = true;
-            this.statusNegative.Location = new System.Drawing.Point(319, 91);
-            this.statusNegative.Name = "statusNegative";
-            this.statusNegative.Size = new System.Drawing.Size(125, 33);
-            this.statusNegative.TabIndex = 107;
-            this.statusNegative.TabStop = true;
-            this.statusNegative.Text = "Отменен";
-            this.statusNegative.UseVisualStyleBackColor = true;
-            // 
-            // statusPositive
-            // 
-            this.statusPositive.AutoSize = true;
-            this.statusPositive.Location = new System.Drawing.Point(319, 42);
-            this.statusPositive.Name = "statusPositive";
-            this.statusPositive.Size = new System.Drawing.Size(139, 33);
-            this.statusPositive.TabIndex = 106;
-            this.statusPositive.TabStop = true;
-            this.statusPositive.Text = "Выполнен";
-            this.statusPositive.UseVisualStyleBackColor = true;
+            this.staff.SelectedValueChanged += new System.EventHandler(this.OnFilter);
             // 
             // label7
             // 
@@ -314,17 +321,25 @@
             // 
             // dateFinish
             // 
+            this.dateFinish.CustomFormat = "d.MM.yyyy HH:m";
+            this.dateFinish.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateFinish.Location = new System.Drawing.Point(51, 91);
             this.dateFinish.Name = "dateFinish";
-            this.dateFinish.Size = new System.Drawing.Size(200, 36);
+            this.dateFinish.ShowUpDown = true;
+            this.dateFinish.Size = new System.Drawing.Size(226, 36);
             this.dateFinish.TabIndex = 102;
             // 
             // dateStart
             // 
+            this.dateStart.CustomFormat = "d.MM.yyyy HH:m";
+            this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateStart.Location = new System.Drawing.Point(51, 36);
             this.dateStart.Name = "dateStart";
-            this.dateStart.Size = new System.Drawing.Size(200, 36);
+            this.dateStart.ShowUpDown = true;
+            this.dateStart.Size = new System.Drawing.Size(226, 36);
             this.dateStart.TabIndex = 101;
+            this.dateStart.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dateStart.ValueChanged += new System.EventHandler(this.OnFilter);
             // 
             // label6
             // 
@@ -407,6 +422,10 @@
             this.PerformLayout();
         }
 
+        private System.Windows.Forms.CheckBox statusPositive;
+
+        private System.Windows.Forms.CheckBox checkBox1statusNegative;
+
         #endregion
 
         private System.Windows.Forms.Label label13;
@@ -429,8 +448,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox staff;
-        private System.Windows.Forms.RadioButton statusNegative;
-        private System.Windows.Forms.RadioButton statusPositive;
+        private System.Windows.Forms.CheckBox statusNegative;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dateFinish;
         private System.Windows.Forms.DateTimePicker dateStart;
