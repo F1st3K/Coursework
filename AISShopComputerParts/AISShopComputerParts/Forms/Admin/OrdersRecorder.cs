@@ -95,20 +95,22 @@ namespace AISShopComputerParts
         
         private void OnSearch(object sender, EventArgs e)
         {
+            var searchRow = SearcherOnDataGridView.ReturnIndexFirst(_globalTable, textSearch.Text);
+            pageNumber.Text = Convert.ToInt32(Math.Ceiling((searchRow + 1) / Convert.ToDouble(_countRows))).ToString();
+            int rowNumber = searchRow % _countRows;
+            UpdateDataGridView();
             if (_currentRow != null)
                 _currentRow.Selected = false;
-            _currentRow = SearcherOnDataGridView.ReturnFirst(dataGridView, textSearch.Text);
+            _currentRow = dataGridView.Rows[rowNumber];
             if (_currentRow != null)
                 _currentRow.Selected = true;
         }
         
         private void OnSort(object sender, EventArgs e)
         {
-            if (SortByDate)
-                dataGridView.Sort(dataGridView.Columns[1], ListSortDirection.Ascending);
-            else
-                dataGridView.Sort(dataGridView.Columns[1], ListSortDirection.Descending);
+            _globalTable.DefaultView.Sort = "date";
             symbolSort.Text = SortByDate ? "↓" : "↑";
+            UpdateDataGridView();
             SortByDate = !SortByDate;
         }
         

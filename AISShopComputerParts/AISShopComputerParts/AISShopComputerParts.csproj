@@ -134,7 +134,7 @@
     <Compile Include="Logic\MySql\MySqlQueryGenerator.cs" />
     <Compile Include="Logic\MySql\MySqlTableConverter.cs" />
     <Compile Include="Logic\Pager.cs" />
-    <Compile Include="Logic\SearcherOnDataGridView.cs" />
+    <Compile Include="Logic\SearcherOnDataTable.cs" />
     <Compile Include="Logic\TableParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
