@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Windows.Forms;
 using AISShopComputerParts.Logic;
 using AISShopComputerParts.Logic.MySql;
@@ -11,11 +12,15 @@ namespace AISShopComputerParts
     public partial class OrdersRecorder : Form
     {
         private DataGridViewRow _currentRow;
-        private string[] idsStaffs;
+        private DataTable _globalTable;
+        private string[] _idsStaffs;
         private bool SortByDate;
+        private int _countRows;
         
         public OrdersRecorder()
         {
+            _globalTable = new DataTable();
+            _countRows = 13;
             InitializeComponent();
         }
 
@@ -35,13 +40,21 @@ namespace AISShopComputerParts
 
         private void OnLoad(object sender, EventArgs e)
         {
+            _globalTable = MySqlAdapter.ReturnAll(DatabaseStructure.Orders);
             AddSelectionComboboxes();
             UpdateDataGridView();
         }
 
         private void UpdateDataGridView()
         {
-            dataGridView.DataSource = MySqlAdapter.ReturnAll(DatabaseStructure.Orders);
+            try
+            {
+                dataGridView.DataSource = Pager.Return(_globalTable, _countRows, Convert.ToInt32(pageNumber.Text));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void AddSelectionComboboxes()
@@ -57,16 +70,17 @@ namespace AISShopComputerParts
                 MySqlAdapter.ReturnColumn(
                     DatabaseStructure.Staffs, DatabaseStructure.Staffs.Columns[0]), String.Empty));
             staffs.Add("Все");
-            idsStaffs = staffs.ToArray();
+            _idsStaffs = staffs.ToArray();
             staff.SelectedIndex = staff.Items.Count - 1;
         }
 
         private void OnFilter(object sender, EventArgs e)
         {
+            if (_idsStaffs is null) return;
             string condition = "orders.date >= '"+dateStart.Value.ToString("yyyy-MM-dd HH:mm:ss")+"' AND " +
                                "orders.date <= '"+dateFinish.Value.ToString("yyyy-MM-dd HH:mm:ss")+"'";
             if (staff.SelectedIndex != staff.Items.Count-1)
-                condition += " AND orders.idStaff = " + idsStaffs[staff.SelectedIndex];
+                condition += " AND orders.idStaff = " + _idsStaffs[staff.SelectedIndex];
             if (statusPositive.Checked == false)
                 condition += " AND orders.status != 1";
             if (statusNegative.Checked == false)
@@ -75,7 +89,8 @@ namespace AISShopComputerParts
                 MySqlAdapter.ALL,
                 DatabaseStructure.Orders.Name,
                 condition);
-            dataGridView.DataSource = MySqlExecutor.GetInstance().QueryReturn(query);
+            _globalTable = MySqlExecutor.GetInstance().QueryReturn(query);
+            UpdateDataGridView();
         }
         
         private void OnSearch(object sender, EventArgs e)
@@ -118,6 +133,18 @@ namespace AISShopComputerParts
             }
 
             allPrice.Text = generalPrice.ToString();
+        }
+
+        private void nextPage_Click(object sender, EventArgs e)
+        {
+            pageNumber.Text = (Convert.ToInt32(pageNumber.Text) + 1).ToString();
+            UpdateDataGridView();
+        }
+
+        private void backPage_Click(object sender, EventArgs e)
+        {
+            pageNumber.Text = (Convert.ToInt32(pageNumber.Text) - 1).ToString();
+            UpdateDataGridView();
         }
     }
 }
