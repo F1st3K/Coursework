@@ -11,7 +11,7 @@ namespace AISShopComputerParts.Logic
                 throw new ArgumentException("count row low null");
             if (page <= 0)
                 throw new ArgumentException("page low null");
-            if (Math.Ceiling(dataTable.Rows.Count / Convert.ToDouble(countRow)) < page)
+            if (Math.Ceiling((dataTable.Rows.Count + 1) / Convert.ToDouble(countRow)) < page)
                 throw new ArgumentException("there are not so many rows in the table");
 
             var result = new DataTable();

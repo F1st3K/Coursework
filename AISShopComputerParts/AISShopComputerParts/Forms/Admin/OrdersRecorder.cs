@@ -49,6 +49,7 @@ namespace AISShopComputerParts
         {
             try
             {
+                CalculateDataTable();
                 dataGridView.DataSource = Pager.Return(_globalTable, _countRows, Convert.ToInt32(pageNumber.Text));
             }
             catch (Exception ex)
@@ -124,14 +125,14 @@ namespace AISShopComputerParts
             _currentRow.Selected = true;
         }
 
-        private void dataGridView_DataSourceChanged(object sender, EventArgs e)
+        private void CalculateDataTable()
         {
-            countStrings.Text = dataGridView.Rows.Count.ToString();
+            countStrings.Text = _globalTable.Rows.Count.ToString();
             var generalPrice = 0;
-            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            for (int i = 0; i < _globalTable.Rows.Count; i++)
             {
-                if (dataGridView.Rows[i].Cells[5].Value.ToString() == "Выполнен")
-                    generalPrice += Convert.ToInt32(dataGridView.Rows[i].Cells[4].Value);
+                if (_globalTable.Rows[i][5].ToString() == "Выполнен")
+                    generalPrice += Convert.ToInt32(_globalTable.Rows[i][4]);
             }
 
             allPrice.Text = generalPrice.ToString();
